@@ -9,7 +9,7 @@ signal released
 @export var _inflating_speed_offset: float = 10
 @export var _sprite: Sprite2D
 @export var _min_scale: float = 0.5
-@export var _max_scale: float = 1
+@export var _max_scale: float = 1.5
 @export var _h_speed: float = 320
 @export var _gravity: float = 200
 @export var _points_scene: PackedScene
