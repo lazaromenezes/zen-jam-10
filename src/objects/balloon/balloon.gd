@@ -5,7 +5,8 @@ signal pop
 signal released
 
 @export var _max_size: float = 100
-@export var _inflating_speed: float = 50
+@export var _inflating_speed: float = 30
+@export var _inflating_speed_offset: float = 10
 @export var _sprite: Sprite2D
 @export var _min_scale: float = 0.5
 @export var _max_scale: float = 1
@@ -27,6 +28,7 @@ var _shake_dir: int = 1
 func _ready() -> void:
 	_sprite.texture = _ballons.pick_random()
 	_sprite.scale = Vector2(_min_scale, _min_scale)
+	_inflating_speed = randf_range(_inflating_speed - _inflating_speed_offset, _inflating_speed + _inflating_speed_offset)
 
 func _process(delta: float) -> void:
 	if not _released and Input.is_action_just_pressed("ui_accept"):
