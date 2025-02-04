@@ -82,6 +82,7 @@ func _release_ballon() -> void:
 	_v_speed = -_size * 5
 	_sprite.self_modulate = Color.WHITE
 	_sprite_pivot.rotation = 0
+	_spawn_points(int((_size/_max_size) * 100))
 	released.emit()
 
 func _pop() -> void:
