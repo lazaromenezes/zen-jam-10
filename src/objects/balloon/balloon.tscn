@@ -1,8 +1,8 @@
 [gd_scene load_steps=34 format=3 uid="uid://dlaetdrmtdcu4"]
 
-[ext_resource type="Script" uid="uid://c3mjo3w0smdww" path="res://balloon.gd" id="1_r345k"]
+[ext_resource type="Script" uid="uid://c3mjo3w0smdww" path="res://src/objects/balloon/balloon.gd" id="1_r345k"]
 [ext_resource type="Texture2D" uid="uid://curl15doyq212" path="res://assets/balloons/bear.png" id="2_4emby"]
-[ext_resource type="PackedScene" uid="uid://voifwta6ufsn" path="res://points.tscn" id="2_jj3vs"]
+[ext_resource type="PackedScene" uid="uid://voifwta6ufsn" path="res://src/objects/points.tscn" id="2_jj3vs"]
 [ext_resource type="Texture2D" uid="uid://bdpq4xler35gd" path="res://assets/balloons/buffalo.png" id="4_lpmxj"]
 [ext_resource type="Texture2D" uid="uid://c1ricl7yu3fbl" path="res://assets/balloons/chick.png" id="5_iyeco"]
 [ext_resource type="Texture2D" uid="uid://buexvsk6py2v3" path="res://assets/balloons/chicken.png" id="6_l42by"]
