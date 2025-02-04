@@ -1,0 +1,55 @@
+[gd_scene load_steps=34 format=3 uid="uid://dlaetdrmtdcu4"]
+
+[ext_resource type="Script" uid="uid://c3mjo3w0smdww" path="res://balloon.gd" id="1_r345k"]
+[ext_resource type="Texture2D" uid="uid://curl15doyq212" path="res://assets/balloons/bear.png" id="2_4emby"]
+[ext_resource type="PackedScene" uid="uid://voifwta6ufsn" path="res://points.tscn" id="2_jj3vs"]
+[ext_resource type="Texture2D" uid="uid://bdpq4xler35gd" path="res://assets/balloons/buffalo.png" id="4_lpmxj"]
+[ext_resource type="Texture2D" uid="uid://c1ricl7yu3fbl" path="res://assets/balloons/chick.png" id="5_iyeco"]
+[ext_resource type="Texture2D" uid="uid://buexvsk6py2v3" path="res://assets/balloons/chicken.png" id="6_l42by"]
+[ext_resource type="Texture2D" uid="uid://bfh1nwb1j1des" path="res://assets/balloons/cow.png" id="7_a2g3c"]
+[ext_resource type="Texture2D" uid="uid://dshi4pkjarxrr" path="res://assets/balloons/crocodile.png" id="8_cnfjm"]
+[ext_resource type="Texture2D" uid="uid://bu1uwd1r41q4m" path="res://assets/balloons/dog.png" id="9_i8a63"]
+[ext_resource type="Texture2D" uid="uid://bipdibi50h8s2" path="res://assets/balloons/duck.png" id="10_upi67"]
+[ext_resource type="Texture2D" uid="uid://bqr4vlv2e1k8r" path="res://assets/balloons/elephant.png" id="11_ktdt0"]
+[ext_resource type="Texture2D" uid="uid://kuqhtyi7meyt" path="res://assets/balloons/frog.png" id="12_pmr6l"]
+[ext_resource type="Texture2D" uid="uid://ckt8ldkrjcgiy" path="res://assets/balloons/giraffe.png" id="13_q0y1i"]
+[ext_resource type="Texture2D" uid="uid://qnhrn4fiiwuj" path="res://assets/balloons/goat.png" id="14_dcyhw"]
+[ext_resource type="Texture2D" uid="uid://b33eyxiwtpxna" path="res://assets/balloons/gorilla.png" id="15_6mfrn"]
+[ext_resource type="Texture2D" uid="uid://dscvfwhvemrne" path="res://assets/balloons/hippo.png" id="16_e5mww"]
+[ext_resource type="Texture2D" uid="uid://cah42cr67ugdn" path="res://assets/balloons/horse.png" id="17_au33v"]
+[ext_resource type="Texture2D" uid="uid://bja7qrhjfhcx7" path="res://assets/balloons/monkey.png" id="18_42gd5"]
+[ext_resource type="Texture2D" uid="uid://dlhi6fj8uk847" path="res://assets/balloons/moose.png" id="19_ufn5r"]
+[ext_resource type="Texture2D" uid="uid://bq0e3pkfybc3f" path="res://assets/balloons/narwhal.png" id="20_4mq8m"]
+[ext_resource type="Texture2D" uid="uid://b3h36pheob222" path="res://assets/balloons/owl.png" id="21_wsbbe"]
+[ext_resource type="Texture2D" uid="uid://bsb2tqj6ldnri" path="res://assets/balloons/panda.png" id="22_nkoff"]
+[ext_resource type="Texture2D" uid="uid://d31q3evj71d3l" path="res://assets/balloons/parrot.png" id="23_qapmp"]
+[ext_resource type="Texture2D" uid="uid://krgqqtv2cpc6" path="res://assets/balloons/penguin.png" id="24_40ms1"]
+[ext_resource type="Texture2D" uid="uid://d4itmfcvfop0k" path="res://assets/balloons/pig.png" id="25_umuxr"]
+[ext_resource type="Texture2D" uid="uid://clk2iglncehx0" path="res://assets/balloons/rabbit.png" id="26_04gnd"]
+[ext_resource type="Texture2D" uid="uid://51fcvfyinuwa" path="res://assets/balloons/rhino.png" id="27_phmja"]
+[ext_resource type="Texture2D" uid="uid://c077k7qhlsc32" path="res://assets/balloons/sloth.png" id="28_6gjw3"]
+[ext_resource type="Texture2D" uid="uid://68plmsk4vcyi" path="res://assets/balloons/snake.png" id="29_37kto"]
+[ext_resource type="Texture2D" uid="uid://d1r7ioex0xcy5" path="res://assets/balloons/walrus.png" id="30_yrsee"]
+[ext_resource type="Texture2D" uid="uid://cvikq8abdxf4s" path="res://assets/balloons/whale.png" id="31_pc2wd"]
+[ext_resource type="Texture2D" uid="uid://dba7qeo2kxmks" path="res://assets/balloons/zebra.png" id="32_4toil"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r345k"]
+radius = 32.0156
+
+[node name="Balloon" type="Node2D" node_paths=PackedStringArray("_sprite")]
+script = ExtResource("1_r345k")
+_sprite = NodePath("Sprite2D")
+_points_scene = ExtResource("2_jj3vs")
+_ballons = Array[Texture2D]([ExtResource("2_4emby"), ExtResource("4_lpmxj"), ExtResource("5_iyeco"), ExtResource("6_l42by"), ExtResource("7_a2g3c"), ExtResource("8_cnfjm"), ExtResource("9_i8a63"), ExtResource("10_upi67"), ExtResource("11_ktdt0"), ExtResource("12_pmr6l"), ExtResource("13_q0y1i"), ExtResource("14_dcyhw"), ExtResource("15_6mfrn"), ExtResource("16_e5mww"), ExtResource("17_au33v"), ExtResource("18_42gd5"), ExtResource("19_ufn5r"), ExtResource("20_4mq8m"), ExtResource("21_wsbbe"), ExtResource("22_nkoff"), ExtResource("23_qapmp"), ExtResource("24_40ms1"), ExtResource("25_umuxr"), ExtResource("26_04gnd"), ExtResource("27_phmja"), ExtResource("28_6gjw3"), ExtResource("29_37kto"), ExtResource("30_yrsee"), ExtResource("31_pc2wd"), ExtResource("32_4toil")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4emby")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_r345k")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
