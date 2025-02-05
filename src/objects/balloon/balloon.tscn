@@ -38,10 +38,10 @@ radius = 32.0156
 
 [node name="Balloon" type="Node2D" node_paths=PackedStringArray("_sprite", "_sprite_pivot")]
 script = ExtResource("1_r345k")
-_sprite = NodePath("Pivot/Sprite2D")
-_points_scene = ExtResource("2_jj3vs")
 _ballons = Array[Texture2D]([ExtResource("2_4emby"), ExtResource("4_lpmxj"), ExtResource("5_iyeco"), ExtResource("6_l42by"), ExtResource("7_a2g3c"), ExtResource("8_cnfjm"), ExtResource("9_i8a63"), ExtResource("10_upi67"), ExtResource("11_ktdt0"), ExtResource("12_pmr6l"), ExtResource("13_q0y1i"), ExtResource("14_dcyhw"), ExtResource("15_6mfrn"), ExtResource("16_e5mww"), ExtResource("17_au33v"), ExtResource("18_42gd5"), ExtResource("19_ufn5r"), ExtResource("20_4mq8m"), ExtResource("21_wsbbe"), ExtResource("22_nkoff"), ExtResource("23_qapmp"), ExtResource("24_40ms1"), ExtResource("25_umuxr"), ExtResource("26_04gnd"), ExtResource("27_phmja"), ExtResource("28_6gjw3"), ExtResource("29_37kto"), ExtResource("30_yrsee"), ExtResource("31_pc2wd"), ExtResource("32_4toil")])
+_sprite = NodePath("Pivot/Sprite2D")
 _sprite_pivot = NodePath("Pivot")
+_points_scene = ExtResource("2_jj3vs")
 
 [node name="Pivot" type="Node2D" parent="."]
 
