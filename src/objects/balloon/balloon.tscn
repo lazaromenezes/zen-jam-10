@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dlaetdrmtdcu4"]
+[gd_scene load_steps=35 format=3 uid="uid://dlaetdrmtdcu4"]
 
 [ext_resource type="Script" uid="uid://c3mjo3w0smdww" path="res://src/objects/balloon/balloon.gd" id="1_r345k"]
 [ext_resource type="Texture2D" uid="uid://curl15doyq212" path="res://assets/balloons/bear.png" id="2_4emby"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://d1r7ioex0xcy5" path="res://assets/balloons/walrus.png" id="30_yrsee"]
 [ext_resource type="Texture2D" uid="uid://cvikq8abdxf4s" path="res://assets/balloons/whale.png" id="31_pc2wd"]
 [ext_resource type="Texture2D" uid="uid://dba7qeo2kxmks" path="res://assets/balloons/zebra.png" id="32_4toil"]
+[ext_resource type="PackedScene" uid="uid://crfrf17pc1hqo" path="res://src/objects/balloon/pop_particles.tscn" id="33_f233r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r345k"]
 radius = 32.0156
@@ -39,13 +40,15 @@ radius = 32.0156
 [node name="Balloon" type="Node2D" node_paths=PackedStringArray("_sprite", "_sprite_pivot")]
 script = ExtResource("1_r345k")
 _ballons = Array[Texture2D]([ExtResource("2_4emby"), ExtResource("4_lpmxj"), ExtResource("5_iyeco"), ExtResource("6_l42by"), ExtResource("7_a2g3c"), ExtResource("8_cnfjm"), ExtResource("9_i8a63"), ExtResource("10_upi67"), ExtResource("11_ktdt0"), ExtResource("12_pmr6l"), ExtResource("13_q0y1i"), ExtResource("14_dcyhw"), ExtResource("15_6mfrn"), ExtResource("16_e5mww"), ExtResource("17_au33v"), ExtResource("18_42gd5"), ExtResource("19_ufn5r"), ExtResource("20_4mq8m"), ExtResource("21_wsbbe"), ExtResource("22_nkoff"), ExtResource("23_qapmp"), ExtResource("24_40ms1"), ExtResource("25_umuxr"), ExtResource("26_04gnd"), ExtResource("27_phmja"), ExtResource("28_6gjw3"), ExtResource("29_37kto"), ExtResource("30_yrsee"), ExtResource("31_pc2wd"), ExtResource("32_4toil")])
-_sprite = NodePath("Pivot/Sprite2D")
+_sprite = NodePath("Pivot/Sprite")
 _sprite_pivot = NodePath("Pivot")
+_particles_scene = ExtResource("33_f233r")
 _points_scene = ExtResource("2_jj3vs")
 
 [node name="Pivot" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+[node name="Sprite" type="Sprite2D" parent="Pivot"]
+unique_name_in_owner = true
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_4emby")
 offset = Vector2(0, -65)
