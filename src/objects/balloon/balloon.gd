@@ -26,6 +26,9 @@ signal released
 @export var _max_in_flight_rotation_deg: float = 10
 @export var _in_flight_shake_speed: float = 0.2
 
+@export_category("Particles")
+@export var _particles_scene: PackedScene
+
 @export_category("Other")
 @export var _points_scene: PackedScene
 @export var _gravity: float = 200
@@ -111,9 +114,8 @@ func _release_ballon() -> void:
 	released.emit()
 
 func _pop() -> void:
-	print("Pop")
-	_sprite.visible = false
 	pop.emit()
+	_spawn_particles()
 	queue_free()
 
 func _spawn_points(value: int) -> void:
@@ -121,6 +123,12 @@ func _spawn_points(value: int) -> void:
 	add_sibling(points)
 	points.global_position = global_position
 	points.get_node("Label").text = str(value)
+
+func _spawn_particles() -> void:
+	var particles := _particles_scene.instantiate() as PopParticles
+	particles.shader_texture = _sprite.texture
+	add_sibling(particles)
+	particles.global_position = global_position
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	_spawn_points(int(global_position.distance_to(_stall.global_position)))

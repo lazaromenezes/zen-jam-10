@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://crfrf17pc1hqo"]
+
+[ext_resource type="Texture2D" uid="uid://c5iqjfvjreps1" path="res://assets/white_pixel.png" id="1_q6yjv"]
+[ext_resource type="Shader" uid="uid://b8wq6e5kroh4v" path="res://src/objects/balloon/baloon_explosion.gdshader" id="2_do8kb"]
+[ext_resource type="Texture2D" uid="uid://curl15doyq212" path="res://assets/balloons/bear.png" id="3_0vvpr"]
+[ext_resource type="Script" uid="uid://t0dj6tjpc1s7" path="res://src/objects/balloon/pop_particles.gd" id="3_do8kb"]
+
+[sub_resource type="Curve" id="Curve_f233r"]
+_data = [Vector2(0.0782609, 1), 0.0, 0.0, 0, 0, Vector2(0.904348, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7l8bf"]
+curve = SubResource("Curve_f233r")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7l8bf"]
+resource_local_to_scene = true
+shader = ExtResource("2_do8kb")
+shader_parameter/direction = null
+shader_parameter/inherit_emitter_velocity_ratio = 0.0
+shader_parameter/directional_velocity_min = 10.0
+shader_parameter/directional_velocity_max = 20.0
+shader_parameter/scale_min = 0.1
+shader_parameter/scale_max = 0.3
+shader_parameter/lifetime_randomness = 0.3
+shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
+shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
+shader_parameter/velocity_pivot = Vector3(0, 0, 0)
+shader_parameter/emission_sphere_radius = 64.0
+shader_parameter/color_value = null
+shader_parameter/gravity = null
+shader_parameter/alpha_curve = SubResource("CurveTexture_7l8bf")
+shader_parameter/sprite = ExtResource("3_0vvpr")
+
+[node name="PopParticles" type="GPUParticles2D"]
+emitting = false
+amount = 300
+texture = ExtResource("1_q6yjv")
+one_shot = true
+explosiveness = 1.0
+interpolate = false
+process_material = SubResource("ShaderMaterial_7l8bf")
+script = ExtResource("3_do8kb")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cx5wyjg3yb6lk"]
+
+[ext_resource type="Shader" uid="uid://b8wq6e5kroh4v" path="res://src/objects/balloon/baloon_explosion.gdshader" id="1_2q7m6"]
+[ext_resource type="Texture2D" uid="uid://curl15doyq212" path="res://assets/balloons/bear.png" id="2_dnws3"]
+
+[sub_resource type="Curve" id="Curve_f233r"]
+_data = [Vector2(0.0782609, 1), 0.0, 0.0, 0, 0, Vector2(0.904348, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7l8bf"]
+curve = SubResource("Curve_f233r")
+
+[resource]
+shader = ExtResource("1_2q7m6")
+shader_parameter/direction = null
+shader_parameter/inherit_emitter_velocity_ratio = 0.0
+shader_parameter/directional_velocity_min = 10.0
+shader_parameter/directional_velocity_max = 20.0
+shader_parameter/scale_min = 0.1
+shader_parameter/scale_max = 0.3
+shader_parameter/lifetime_randomness = 0.3
+shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
+shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
+shader_parameter/velocity_pivot = Vector3(0, 0, 0)
+shader_parameter/emission_sphere_radius = 64.0
+shader_parameter/color_value = null
+shader_parameter/gravity = null
+shader_parameter/alpha_curve = SubResource("CurveTexture_7l8bf")
+shader_parameter/sprite = ExtResource("2_dnws3")
