@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://ofv6rsepmowu"]
+
+[ext_resource type="Script" uid="uid://cyvhebvpp3gax" path="res://src/objects/trampoline/trampoline.gd" id="1_oe74m"]
+[ext_resource type="Texture2D" uid="uid://b4rqtmkj8234d" path="res://assets/spring/springboardDown.png" id="1_vicc4"]
+[ext_resource type="Texture2D" uid="uid://d00gay34kpioy" path="res://assets/spring/springboardUp.png" id="2_oe74m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7eq0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vicc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oe74m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vicc4")
+}],
+"loop": false,
+"name": &"push",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oe74m"]
+size = Vector2(70, 20)
+
+[node name="Trampoline" type="Node2D" node_paths=PackedStringArray("_anim_sprite")]
+script = ExtResource("1_oe74m")
+_anim_sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -35)
+sprite_frames = SubResource("SpriteFrames_7eq0f")
+animation = &"push"
+frame = 2
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_oe74m")

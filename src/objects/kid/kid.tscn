@@ -119,17 +119,19 @@ animations = [{
 size = Vector2(92, 187)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s57k7"]
-size = Vector2(150, 186)
+size = Vector2(150, 192)
 
-[node name="Kid" type="CharacterBody2D" node_paths=PackedStringArray("_anim_sprite", "_hold_position")]
+[node name="Kid" type="CharacterBody2D" node_paths=PackedStringArray("_anim_sprite", "_hold_position", "_visible_on_screen_notifier")]
+collision_layer = 2
 script = ExtResource("1_s57k7")
 _anim_sprite = NodePath("AnimatedSprite2D")
 _hold_position = NodePath("AnimatedSprite2D/HoldPosition")
+_visible_on_screen_notifier = NodePath("VisibleOnScreenNotifier2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -129)
 sprite_frames = SubResource("SpriteFrames_q2lfo")
-animation = &"hold"
+animation = &"fall"
 
 [node name="HoldPosition" type="Marker2D" parent="AnimatedSprite2D"]
 position = Vector2(41, -77)
@@ -141,9 +143,11 @@ shape = SubResource("RectangleShape2D_dx64e")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -94)
+position = Vector2(0, -91)
 shape = SubResource("RectangleShape2D_s57k7")
 debug_color = Color(0.0861068, 0.486235, 0.0272189, 0.42)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
