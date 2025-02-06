@@ -3,22 +3,21 @@ extends Node2D
 
 @export var _balloon_scene: PackedScene
 
-func _ready() -> void:
-	await get_tree().create_timer(1).timeout
-	_create_balloon.call_deferred()
+var _next_inline: Kid
 
-func _create_balloon() -> void:
+func create_balloon() -> void:
 	var balloon := _balloon_scene.instantiate() as Balloon
 	add_child(balloon)
 	balloon.set_stall(self)
 	balloon.global_position = global_position
-	balloon.released.connect(_on_balloon_released)
 	balloon.pop.connect(_on_balloon_popped)
 
-func _on_balloon_released() -> void:
-	await get_tree().create_timer(1).timeout
-	_create_balloon.call_deferred()
+func set_next_inline(next_kid: Kid) -> void:
+	_next_inline = next_kid
+
+func get_next_inline() -> Kid:
+	return _next_inline
 
 func _on_balloon_popped() -> void:
 	await get_tree().create_timer(1).timeout
-	_create_balloon.call_deferred()
+	create_balloon.call_deferred()

@@ -106,12 +106,17 @@ func _stop_inflating() -> void:
 	_release_ballon()
 
 func _release_ballon() -> void:
+	_attach_kid()
 	_released = true
 	_v_speed = -_size * 5
 	_sprite.self_modulate = Color.WHITE
 	_sprite_pivot.rotation = 0
 	_spawn_points(int(_size_max_ratio * 100))
 	released.emit()
+
+func _attach_kid() -> void:
+	var kid := _stall.get_next_inline()
+	kid.hold_balloon(self)
 
 func _pop() -> void:
 	pop.emit()

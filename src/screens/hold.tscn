@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://mt25okssb51x"]
+[gd_scene load_steps=4 format=3 uid="uid://mt25okssb51x"]
 
 [ext_resource type="PackedScene" uid="uid://ctma3i7b8fmom" path="res://src/objects/stall/stall.tscn" id="1_5p17v"]
+[ext_resource type="PackedScene" uid="uid://b8p4wq5cfri8e" path="res://src/objects/kid/kid.tscn" id="2_q75fh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cj6eu"]
 size = Vector2(1951, 20)
 
 [node name="Hold" type="Node2D"]
 
-[node name="Floor" type="Area2D" parent="."]
-collision_layer = 2
+[node name="Floor" type="StaticBody2D" parent="."]
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
@@ -16,4 +16,7 @@ position = Vector2(978.5, 1053)
 shape = SubResource("RectangleShape2D_cj6eu")
 
 [node name="Stall" parent="." instance=ExtResource("1_5p17v")]
-position = Vector2(99, 853)
+position = Vector2(99, 1031)
+
+[node name="Kid" parent="." instance=ExtResource("2_q75fh")]
+position = Vector2(599, 863)
