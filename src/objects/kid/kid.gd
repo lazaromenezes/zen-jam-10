@@ -20,10 +20,12 @@ enum State {
 @export var _hold_position: Marker2D
 @export var _bounce_speed: float = -1000
 @export var _visible_on_screen_notifier: VisibleOnScreenNotifier2D
+@export var _raycast: RayCast2D
 
 var _dir: int = -1
 var _state: State = State.INLINE
 var _balloon: Balloon
+var _is_next_inline: bool = false
 
 func _ready() -> void:
 	_change_dir(-1)
@@ -31,23 +33,24 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	match _state:
 		State.INLINE:
-			if absf(velocity.x) > 0:
-				_anim_sprite.play(WALK_ANIM)
-			else:
-				_anim_sprite.play(IDLE_ANIM)
+			_update_move_animation()
 		State.BOUNCING:
-			if velocity.y > 0:
-				_anim_sprite.play(FALL_ANIM)
-			else:
-				_anim_sprite.play(JUMP_ANIM)
+			_update_jump_animation()
+		State.EXITING:
+			_update_move_animation()
 
 func _physics_process(delta: float) -> void:
 	match _state:
 		State.INLINE:
+			_check_near_kid()
 			_handle_move(delta)
 			_handle_gravity(delta)
 			move_and_slide()
 		State.BOUNCING:
+			_handle_gravity(delta)
+			move_and_slide()
+		State.EXITING:
+			_handle_move(delta)
 			_handle_gravity(delta)
 			move_and_slide()
 
@@ -57,6 +60,27 @@ func hold_balloon(balloon: Balloon) -> void:
 	balloon.global_position = _hold_position.global_position
 	reparent(balloon)
 	_state = State.HOLDING
+	_is_next_inline = false
+
+func _update_move_animation() -> void:
+	if absf(velocity.x) > 0:
+		_anim_sprite.play(WALK_ANIM)
+	else:
+		_anim_sprite.play(IDLE_ANIM)
+
+func _update_jump_animation() -> void:
+	if velocity.y > 0:
+		_anim_sprite.play(FALL_ANIM)
+	else:
+		_anim_sprite.play(JUMP_ANIM)
+
+func _check_near_kid() -> void:
+	if _is_next_inline:
+		return
+	if _raycast.is_colliding():
+		_change_dir(0)
+	else:
+		_change_dir(-1)
 
 func _release_balloon() -> void:
 	_balloon.detach_kid()
@@ -88,6 +112,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		var stall := area.owner as Stall
 		stall.create_balloon.call_deferred()
 		stall.set_next_inline(self)
+		_is_next_inline = true
 	elif area.owner is Trampoline and _state == State.HOLDING:
 		_state = State.BOUNCING
 		_release_balloon()
@@ -102,6 +127,6 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 			_state = State.INLINE
 			_change_dir(-1)
 	elif _state == State.BOUNCING:
-		_state = State.INLINE
+		_state = State.EXITING
 		_change_dir(1)
 		_visible_on_screen_notifier.screen_exited.connect(queue_free)
