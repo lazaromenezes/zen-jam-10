@@ -39,10 +39,15 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 func hold_balloon(balloon: Balloon) -> void:
-	_state = State.HOLDING
 	_anim_sprite.play(HOLD_ANIM)
 	balloon.global_position = _hold_position.global_position
 	reparent(balloon)
+	_state = State.HOLDING
+
+func _release_balloon() -> void:
+	var balloon := get_parent() as Balloon
+	balloon.detach_kid()
+	reparent.call_deferred(get_tree().root)
 
 func _handle_move(delta: float) -> void:
 	if not is_on_floor():
@@ -61,7 +66,7 @@ func _handle_gravity(delta: float) -> void:
 func _change_dir(dir: int) -> void:
 	_dir = dir
 	if absi(dir) > 0:
-		scale.x = dir
+		_anim_sprite.scale.x = dir
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.owner is Stall:
@@ -69,3 +74,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		var stall := area.owner as Stall
 		stall.create_balloon.call_deferred()
 		stall.set_next_inline(self)
+
+func _on_area_2d_body_entered(_body: Node2D) -> void:
+	if _state == State.HOLDING:
+		var balloon := get_parent() as Balloon
+		if balloon and balloon.get_v_speed() > 0:
+			_release_balloon()
+			_state = State.INLINE
+			_change_dir(-1)

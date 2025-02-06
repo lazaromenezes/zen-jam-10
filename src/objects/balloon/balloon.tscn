@@ -37,13 +37,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_r345k"]
 radius = 32.0156
 
-[node name="Balloon" type="Node2D" node_paths=PackedStringArray("_sprite", "_sprite_pivot")]
+[node name="Balloon" type="Node2D" node_paths=PackedStringArray("_sprite", "_sprite_pivot", "_visible_on_screen_notifier")]
 script = ExtResource("1_r345k")
 _ballons = Array[Texture2D]([ExtResource("2_4emby"), ExtResource("4_lpmxj"), ExtResource("5_iyeco"), ExtResource("6_l42by"), ExtResource("7_a2g3c"), ExtResource("8_cnfjm"), ExtResource("9_i8a63"), ExtResource("10_upi67"), ExtResource("11_ktdt0"), ExtResource("12_pmr6l"), ExtResource("13_q0y1i"), ExtResource("14_dcyhw"), ExtResource("15_6mfrn"), ExtResource("16_e5mww"), ExtResource("17_au33v"), ExtResource("18_42gd5"), ExtResource("19_ufn5r"), ExtResource("20_4mq8m"), ExtResource("21_wsbbe"), ExtResource("22_nkoff"), ExtResource("23_qapmp"), ExtResource("24_40ms1"), ExtResource("25_umuxr"), ExtResource("26_04gnd"), ExtResource("27_phmja"), ExtResource("28_6gjw3"), ExtResource("29_37kto"), ExtResource("30_yrsee"), ExtResource("31_pc2wd"), ExtResource("32_4toil")])
 _sprite = NodePath("Pivot/Sprite")
 _sprite_pivot = NodePath("Pivot")
 _particles_scene = ExtResource("33_f233r")
 _points_scene = ExtResource("2_jj3vs")
+_visible_on_screen_notifier = NodePath("VisibleOnScreenNotifier2D")
 
 [node name="Pivot" type="Node2D" parent="."]
 
@@ -55,9 +56,14 @@ offset = Vector2(0, -65)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -32)
+collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_r345k")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -33.5)
+scale = Vector2(4.4, 4.35)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

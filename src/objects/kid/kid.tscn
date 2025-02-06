@@ -124,12 +124,15 @@ size = Vector2(150, 186)
 [node name="Kid" type="CharacterBody2D" node_paths=PackedStringArray("_anim_sprite", "_hold_position")]
 script = ExtResource("1_s57k7")
 _anim_sprite = NodePath("AnimatedSprite2D")
-_hold_position = NodePath("HoldPosition")
+_hold_position = NodePath("AnimatedSprite2D/HoldPosition")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -129)
 sprite_frames = SubResource("SpriteFrames_q2lfo")
 animation = &"hold"
+
+[node name="HoldPosition" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(41, -77)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -94.5)
@@ -142,7 +145,5 @@ position = Vector2(0, -94)
 shape = SubResource("RectangleShape2D_s57k7")
 debug_color = Color(0.0861068, 0.486235, 0.0272189, 0.42)
 
-[node name="HoldPosition" type="Marker2D" parent="."]
-position = Vector2(41, -206)
-
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

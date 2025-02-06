@@ -32,6 +32,7 @@ signal released
 @export_category("Other")
 @export var _points_scene: PackedScene
 @export var _gravity: float = 200
+@export var _visible_on_screen_notifier: VisibleOnScreenNotifier2D
 
 var _inflating: bool = false
 var _size: float = 0
@@ -64,6 +65,15 @@ func _process(delta: float) -> void:
 
 func set_stall(stall: Stall) -> void:
 	_stall = stall
+
+func detach_kid() -> void:
+	_v_speed = -500
+	_h_speed = 0
+	_gravity = 0
+	_visible_on_screen_notifier.screen_exited.connect(queue_free)
+
+func get_v_speed() -> float:
+	return _v_speed
 
 func _move(delta: float) -> void:
 	_v_speed += _gravity * delta
