@@ -34,12 +34,21 @@ signal released
 @export var _gravity: float = 200
 @export var _visible_on_screen_notifier: VisibleOnScreenNotifier2D
 
+@export_category("SFX Control")
+@export var _min_pitch_scale: float = 1
+# The UI allows only up to 4, but it seems to make a difference...
+@export var _max_pitch_scale: float = 50 
+@export var _min_volume_db: float = -24
+@export var _max_volume_db: float = -12
+
+
 var _inflating: bool = false
 var _size: float = 0
 var _released: bool = false
 var _v_speed: float
 var _stall: Stall
 var _shake_dir: int = 1
+
 
 var _size_max_ratio: float:
 	get: return _size / _max_size
@@ -54,13 +63,13 @@ func _process(delta: float) -> void:
 		_inflating = true
 	if not _released and _inflating and Input.is_action_just_released("ui_accept"):
 		_stop_inflating()
+		_release_ballon()
 	
 	if _inflating:
 		_inflate(delta)
 	if _released:
 		_move(delta)
-		_size -= _inflating_speed * _deflate_rate * delta
-		_size = maxf(0, _size)
+		_deflate(delta)
 		_update_scale()
 
 func set_stall(stall: Stall) -> void:
@@ -85,8 +94,28 @@ func _inflate(delta: float) -> void:
 	if _size > _max_size:
 		_pop()
 	else:
+		_play_wind_sound()
 		_update_scale()
+		_scale_inflate_sound()
 		_shake(delta)
+
+func _deflate(delta: float) -> void:
+	_size -= _inflating_speed * _deflate_rate * delta
+	_size = maxf(0, _size)
+	_play_wind_sound()
+	_scale_deflate_sound()
+
+func _scale_inflate_sound() -> void:
+	%WindNoise.pitch_scale = lerp(_min_pitch_scale, _max_pitch_scale, _size_max_ratio)
+	%WindNoise.volume_db = lerp(_min_volume_db, _max_volume_db, _size_max_ratio)
+
+func _scale_deflate_sound() -> void:
+	%WindNoise.pitch_scale = _min_pitch_scale + (_max_pitch_scale - _min_pitch_scale) * _size_max_ratio
+	%WindNoise.volume_db = _max_volume_db * (1 + _size_max_ratio)
+
+func _play_wind_sound() -> void:
+	if not %WindNoise.playing:
+		%WindNoise.play()
 
 func _shake(delta: float) -> void:
 	_sprite_pivot.rotate(_shake_dir * _shake_speed * delta)
@@ -113,10 +142,14 @@ func _update_color() -> void:
 
 func _stop_inflating() -> void:
 	_inflating = false
-	_release_ballon()
+	%WindNoise.playing = false
+	#%WindNoise.pitch_scale = _max_pitch_scale *  _size_max_ratio
+	#%WindNoise.volume_db = -(abs(_max_volume_db) * _size_max_ratio)
 
 func _release_ballon() -> void:
 	_attach_kid()
+	%ReleaseNoise.play(0.25)
+	
 	_released = true
 	_v_speed = -_size * 5
 	_sprite.self_modulate = Color.WHITE
