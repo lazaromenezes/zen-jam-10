@@ -143,8 +143,6 @@ func _update_color() -> void:
 func _stop_inflating() -> void:
 	_inflating = false
 	%WindNoise.playing = false
-	#%WindNoise.pitch_scale = _max_pitch_scale *  _size_max_ratio
-	#%WindNoise.volume_db = -(abs(_max_volume_db) * _size_max_ratio)
 
 func _release_ballon() -> void:
 	_attach_kid()

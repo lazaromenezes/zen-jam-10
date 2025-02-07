@@ -72,13 +72,11 @@ scale = Vector2(4.4, 4.35)
 unique_name_in_owner = true
 stream = ExtResource("34_f233r")
 volume_db = -24.0
-bus = &"balloon_inflate"
 
 [node name="ReleaseNoise" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("35_7l8bf")
 volume_db = -12.0
 pitch_scale = 2.0
-bus = &"balloon_release"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
