@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bljutboc7t788"]
+
+[ext_resource type="Script" uid="uid://43k2afrcvklc" path="res://src/objects/line_manager/line_manager.gd" id="1_0volg"]
+[ext_resource type="PackedScene" uid="uid://b8p4wq5cfri8e" path="res://src/objects/kid/kid.tscn" id="2_8mpnu"]
+
+[node name="LineManager" type="Node2D" node_paths=PackedStringArray("_timer")]
+script = ExtResource("1_0volg")
+_kid_scene = ExtResource("2_8mpnu")
+_timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="."]
