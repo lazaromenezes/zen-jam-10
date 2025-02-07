@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://mt25okssb51x"]
+
+[ext_resource type="PackedScene" uid="uid://ctma3i7b8fmom" path="res://src/objects/stall/stall.tscn" id="1_rj4je"]
+[ext_resource type="PackedScene" uid="uid://ofv6rsepmowu" path="res://src/objects/trampoline/trampoline.tscn" id="3_bnd7t"]
+[ext_resource type="PackedScene" uid="uid://bljutboc7t788" path="res://src/objects/line_manager/line_manager.tscn" id="4_vnbiq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj6eu"]
+size = Vector2(2743, 20)
+
+[node name="Map" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(1374.5, 1053)
+shape = SubResource("RectangleShape2D_cj6eu")
+
+[node name="Stall" parent="." instance=ExtResource("1_rj4je")]
+position = Vector2(99, 1031)
+
+[node name="Trampoline" parent="." instance=ExtResource("3_bnd7t")]
+position = Vector2(1749, 1041)
+scale = Vector2(2.52, 1)
+
+[node name="LineManager" parent="." instance=ExtResource("4_vnbiq")]
+position = Vector2(2105, 889)
