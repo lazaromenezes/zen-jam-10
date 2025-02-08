@@ -23,6 +23,10 @@ window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="canvas_items"
 
+[gui]
+
+theme/custom="uid://dwl0yx517em6a"
+
 [input]
 
 deliver_balloon={

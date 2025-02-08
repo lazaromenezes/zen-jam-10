@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dwl0yx517em6a"]
+
+[ext_resource type="FontFile" uid="uid://bwktew5xftf22" path="res://assets/fonts/Flippingamefont-vnAPM.ttf" id="1_apfjo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xk00v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apfjo"]
+
+[resource]
+default_font = ExtResource("1_apfjo")
+default_font_size = 32
+MainMenuSelection/base_type = &"PanelContainer"
+MainMenuSelection/styles/panel = SubResource("StyleBoxEmpty_xk00v")
+TitleScreenButton/base_type = &"Button"
+TitleScreenButton/colors/font_color = Color(1, 1, 1, 1)
+TitleScreenButton/colors/font_disabled_color = Color(0.804743, 0.804743, 0.804743, 1)
+TitleScreenButton/colors/font_focus_color = Color(1, 0.8, 0, 1)
+TitleScreenButton/colors/font_hover_color = Color(1, 0.8, 0, 1)
+TitleScreenButton/colors/font_hover_pressed_color = Color(0.683155, 0.543221, 1.92523e-07, 1)
+TitleScreenButton/colors/font_outline_color = Color(0, 0, 0, 1)
+TitleScreenButton/constants/outline_size = 5
+TitleScreenButton/font_sizes/font_size = 64
+TitleScreenButton/styles/focus = SubResource("StyleBoxEmpty_apfjo")

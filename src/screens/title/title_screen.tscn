@@ -1,0 +1,180 @@
+[gd_scene load_steps=37 format=3 uid="uid://cpsduhll555xn"]
+
+[ext_resource type="Script" uid="uid://b7lto8qbvs7ka" path="res://src/screens/title/title_screen.gd" id="1_6utff"]
+[ext_resource type="Texture2D" uid="uid://b858j2fj6wioo" path="res://assets/title/sky.png" id="2_tfbb1"]
+[ext_resource type="Script" uid="uid://bhundk706jinr" path="res://src/screens/title/baloon_area.gd" id="3_ccq8b"]
+[ext_resource type="PackedScene" uid="uid://bink7bsw5fdex" path="res://src/objects/static_balloon/static_balloon.tscn" id="4_55bri"]
+[ext_resource type="Texture2D" uid="uid://cvvmsqi2u6h5b" path="res://assets/title/title.png" id="5_q5nsy"]
+[ext_resource type="Script" uid="uid://dpq1aepmg6453" path="res://src/screens/title/selection_indicator.gd" id="7_bym7c"]
+[ext_resource type="Texture2D" uid="uid://curl15doyq212" path="res://assets/balloons/bear.png" id="8_8e1hu"]
+[ext_resource type="Texture2D" uid="uid://bdpq4xler35gd" path="res://assets/balloons/buffalo.png" id="9_e1nh5"]
+[ext_resource type="Texture2D" uid="uid://c1ricl7yu3fbl" path="res://assets/balloons/chick.png" id="10_0hwsv"]
+[ext_resource type="Texture2D" uid="uid://buexvsk6py2v3" path="res://assets/balloons/chicken.png" id="11_ettea"]
+[ext_resource type="Texture2D" uid="uid://bfh1nwb1j1des" path="res://assets/balloons/cow.png" id="12_31ye3"]
+[ext_resource type="Texture2D" uid="uid://dshi4pkjarxrr" path="res://assets/balloons/crocodile.png" id="13_o5rl5"]
+[ext_resource type="Texture2D" uid="uid://bu1uwd1r41q4m" path="res://assets/balloons/dog.png" id="14_jcj0j"]
+[ext_resource type="Texture2D" uid="uid://bipdibi50h8s2" path="res://assets/balloons/duck.png" id="15_b074h"]
+[ext_resource type="Texture2D" uid="uid://bqr4vlv2e1k8r" path="res://assets/balloons/elephant.png" id="16_0q5st"]
+[ext_resource type="Texture2D" uid="uid://kuqhtyi7meyt" path="res://assets/balloons/frog.png" id="17_dmsfd"]
+[ext_resource type="Texture2D" uid="uid://ckt8ldkrjcgiy" path="res://assets/balloons/giraffe.png" id="18_06afi"]
+[ext_resource type="Texture2D" uid="uid://qnhrn4fiiwuj" path="res://assets/balloons/goat.png" id="19_rxvru"]
+[ext_resource type="Texture2D" uid="uid://b33eyxiwtpxna" path="res://assets/balloons/gorilla.png" id="20_nthcp"]
+[ext_resource type="Texture2D" uid="uid://dscvfwhvemrne" path="res://assets/balloons/hippo.png" id="21_6tugr"]
+[ext_resource type="Texture2D" uid="uid://cah42cr67ugdn" path="res://assets/balloons/horse.png" id="22_5ju6d"]
+[ext_resource type="Texture2D" uid="uid://bja7qrhjfhcx7" path="res://assets/balloons/monkey.png" id="23_lmhvh"]
+[ext_resource type="Texture2D" uid="uid://dlhi6fj8uk847" path="res://assets/balloons/moose.png" id="24_fe03x"]
+[ext_resource type="Texture2D" uid="uid://bq0e3pkfybc3f" path="res://assets/balloons/narwhal.png" id="25_l2w5k"]
+[ext_resource type="Texture2D" uid="uid://b3h36pheob222" path="res://assets/balloons/owl.png" id="26_qtl8k"]
+[ext_resource type="Texture2D" uid="uid://bsb2tqj6ldnri" path="res://assets/balloons/panda.png" id="27_0iypp"]
+[ext_resource type="Texture2D" uid="uid://d31q3evj71d3l" path="res://assets/balloons/parrot.png" id="28_xw2pf"]
+[ext_resource type="Texture2D" uid="uid://krgqqtv2cpc6" path="res://assets/balloons/penguin.png" id="29_0c58f"]
+[ext_resource type="Texture2D" uid="uid://d4itmfcvfop0k" path="res://assets/balloons/pig.png" id="30_yuwpk"]
+[ext_resource type="Texture2D" uid="uid://clk2iglncehx0" path="res://assets/balloons/rabbit.png" id="31_dp5ww"]
+[ext_resource type="Texture2D" uid="uid://51fcvfyinuwa" path="res://assets/balloons/rhino.png" id="32_pxh61"]
+[ext_resource type="Texture2D" uid="uid://c077k7qhlsc32" path="res://assets/balloons/sloth.png" id="33_ewdug"]
+[ext_resource type="Texture2D" uid="uid://68plmsk4vcyi" path="res://assets/balloons/snake.png" id="34_pk3al"]
+[ext_resource type="Texture2D" uid="uid://d1r7ioex0xcy5" path="res://assets/balloons/walrus.png" id="35_ei8st"]
+[ext_resource type="Texture2D" uid="uid://cvikq8abdxf4s" path="res://assets/balloons/whale.png" id="36_xx0xn"]
+[ext_resource type="Texture2D" uid="uid://dba7qeo2kxmks" path="res://assets/balloons/zebra.png" id="37_6wsdr"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6utff")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tfbb1")
+
+[node name="BaloonArea" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_ccq8b")
+_baloon_scene = ExtResource("4_55bri")
+
+[node name="Timer" type="Timer" parent="BaloonArea"]
+one_shot = true
+
+[node name="Separator" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.301961, 0.301961, 0.301961, 0.701961)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 120
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+texture = ExtResource("5_q5nsy")
+
+[node name="MenuContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 20
+
+[node name="SinglePlayer" type="Button" parent="MarginContainer/VBoxContainer/MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"TitleScreenButton"
+text = "1 Player"
+flat = true
+
+[node name="Multiplayer" type="Button" parent="MarginContainer/VBoxContainer/MenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"TitleScreenButton"
+text = "2 Players"
+flat = true
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/MenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"TitleScreenButton"
+text = "Options"
+flat = true
+
+[node name="Leaderboard" type="Button" parent="MarginContainer/VBoxContainer/MenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"TitleScreenButton"
+text = "Leaderboard"
+flat = true
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/MenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"TitleScreenButton"
+text = "Exit"
+flat = true
+
+[node name="SelectionIndicator" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -35.0
+offset_right = 200.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"MainMenuSelection"
+script = ExtResource("7_bym7c")
+_icons = Array[Texture2D]([ExtResource("8_8e1hu"), ExtResource("9_e1nh5"), ExtResource("10_0hwsv"), ExtResource("11_ettea"), ExtResource("12_31ye3"), ExtResource("13_o5rl5"), ExtResource("14_jcj0j"), ExtResource("15_b074h"), ExtResource("16_0q5st"), ExtResource("17_dmsfd"), ExtResource("18_06afi"), ExtResource("19_rxvru"), ExtResource("20_nthcp"), ExtResource("21_6tugr"), ExtResource("22_5ju6d"), ExtResource("23_lmhvh"), ExtResource("24_fe03x"), ExtResource("25_l2w5k"), ExtResource("26_qtl8k"), ExtResource("27_0iypp"), ExtResource("28_xw2pf"), ExtResource("29_0c58f"), ExtResource("30_yuwpk"), ExtResource("31_dp5ww"), ExtResource("32_pxh61"), ExtResource("33_ewdug"), ExtResource("34_pk3al"), ExtResource("35_ei8st"), ExtResource("36_xx0xn"), ExtResource("37_6wsdr"), ExtResource("8_8e1hu"), ExtResource("9_e1nh5"), ExtResource("10_0hwsv"), ExtResource("11_ettea"), ExtResource("12_31ye3"), ExtResource("13_o5rl5"), ExtResource("14_jcj0j"), ExtResource("15_b074h"), ExtResource("16_0q5st"), ExtResource("17_dmsfd"), ExtResource("18_06afi"), ExtResource("19_rxvru"), ExtResource("20_nthcp"), ExtResource("21_6tugr"), ExtResource("22_5ju6d"), ExtResource("23_lmhvh"), ExtResource("24_fe03x"), ExtResource("25_l2w5k"), ExtResource("26_qtl8k"), ExtResource("27_0iypp"), ExtResource("28_xw2pf"), ExtResource("29_0c58f"), ExtResource("30_yuwpk"), ExtResource("31_dp5ww"), ExtResource("32_pxh61"), ExtResource("33_ewdug"), ExtResource("34_pk3al"), ExtResource("35_ei8st"), ExtResource("36_xx0xn"), ExtResource("37_6wsdr")])
+
+[node name="Left" type="TextureRect" parent="SelectionIndicator"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+texture = ExtResource("18_06afi")
+expand_mode = 1
+
+[node name="Right" type="TextureRect" parent="SelectionIndicator"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = ExtResource("18_06afi")
+expand_mode = 1
+
+[connection signal="timeout" from="BaloonArea/Timer" to="BaloonArea" method="_on_timer_timeout"]

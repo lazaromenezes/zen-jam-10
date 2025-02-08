@@ -32,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://d1r7ioex0xcy5" path="res://assets/balloons/walrus.png" id="30_yrsee"]
 [ext_resource type="Texture2D" uid="uid://cvikq8abdxf4s" path="res://assets/balloons/whale.png" id="31_pc2wd"]
 [ext_resource type="Texture2D" uid="uid://dba7qeo2kxmks" path="res://assets/balloons/zebra.png" id="32_4toil"]
-[ext_resource type="PackedScene" uid="uid://crfrf17pc1hqo" path="res://src/objects/balloon/pop_particles.tscn" id="33_f233r"]
+[ext_resource type="PackedScene" uid="uid://crfrf17pc1hqo" path="res://src/objects/pop_particles/pop_particles.tscn" id="33_f233r"]
 [ext_resource type="AudioStream" uid="uid://m24glsc64hf8" path="res://assets/audio/sfx/wind.ogg" id="34_f233r"]
 [ext_resource type="AudioStream" uid="uid://bpkey6b0y6i5x" path="res://assets/audio/sfx/7724__noisecollector__balloon2.wav" id="35_7l8bf"]
 
