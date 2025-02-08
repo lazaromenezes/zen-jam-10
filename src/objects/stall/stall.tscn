@@ -15,3 +15,6 @@ position = Vector2(0, -104)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_m4x42")
+
+[node name="AudioListener" type="AudioListener2D" parent="."]
+current = true

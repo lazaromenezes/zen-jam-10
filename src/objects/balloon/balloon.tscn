@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dlaetdrmtdcu4"]
+[gd_scene load_steps=37 format=3 uid="uid://dlaetdrmtdcu4"]
 
 [ext_resource type="Script" uid="uid://c3mjo3w0smdww" path="res://src/objects/balloon/balloon.gd" id="1_r345k"]
 [ext_resource type="Texture2D" uid="uid://curl15doyq212" path="res://assets/balloons/bear.png" id="2_4emby"]
@@ -33,6 +33,8 @@
 [ext_resource type="Texture2D" uid="uid://cvikq8abdxf4s" path="res://assets/balloons/whale.png" id="31_pc2wd"]
 [ext_resource type="Texture2D" uid="uid://dba7qeo2kxmks" path="res://assets/balloons/zebra.png" id="32_4toil"]
 [ext_resource type="PackedScene" uid="uid://crfrf17pc1hqo" path="res://src/objects/balloon/pop_particles.tscn" id="33_f233r"]
+[ext_resource type="AudioStream" uid="uid://m24glsc64hf8" path="res://assets/audio/sfx/wind.ogg" id="34_f233r"]
+[ext_resource type="AudioStream" uid="uid://bpkey6b0y6i5x" path="res://assets/audio/sfx/7724__noisecollector__balloon2.wav" id="35_7l8bf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r345k"]
 radius = 32.0156
@@ -65,5 +67,16 @@ shape = SubResource("CircleShape2D_r345k")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(0, -33.5)
 scale = Vector2(4.4, 4.35)
+
+[node name="WindNoise" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("34_f233r")
+volume_db = -24.0
+
+[node name="ReleaseNoise" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("35_7l8bf")
+volume_db = -12.0
+pitch_scale = 2.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

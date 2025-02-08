@@ -82,7 +82,7 @@ void calculate_initial_display_params(inout DisplayParameters params, inout uint
 void process_display_param(inout DisplayParameters parameters, float lifetime, mat4 transform) {
 	vec2 particlePosition = transform[3].xy;
 	vec4 spriteColor = texture(sprite, particlePosition / parameters.texture_size + vec2(0.5, 0.5));
-	
+
 	parameters.color = spriteColor;
 	parameters.color.a *= texture(alpha_curve, vec2(lifetime)).r;
 }
@@ -90,7 +90,7 @@ void process_display_param(inout DisplayParameters parameters, float lifetime, m
 vec3 calculate_initial_position(inout DisplayParameters params, inout uint alt_seed) {
 	float pi = 3.14159;
 	vec3 pos = vec3(0.0);
-	
+
 	{ // Emission shape.
 		float s = rand_from_seed(alt_seed) * 2.0 - 1.0;
 		float t = rand_from_seed(alt_seed) * 2.0 * pi;
@@ -98,7 +98,7 @@ vec3 calculate_initial_position(inout DisplayParameters params, inout uint alt_s
 		float radius = emission_sphere_radius * sqrt(1.0 - s * s);
 		pos = mix(vec3(0.0, 0.0, 0.0), vec3(radius * cos(t), radius * sin(t), emission_sphere_radius * s), p);
 	}
-	
+
 	return pos * emission_shape_scale + emission_shape_offset;
 }
 
@@ -115,13 +115,13 @@ vec3 get_random_direction_from_spread(inout uint alt_seed, float spread_angle) {
 void start() {
 	uint base_number = NUMBER;
 	uint alt_seed = hash(base_number + uint(1) + RANDOM_SEED);
-	
+
 	DisplayParameters params;
 	calculate_initial_display_params(params, alt_seed);
-	
+
 	DynamicsParameters dynamic_params;
 	calculate_initial_dynamics_params(dynamic_params, alt_seed);
-	
+
 	process_display_param(params, 0.0, TRANSFORM);
 	if (rand_from_seed(alt_seed) > AMOUNT_RATIO) {
 		ACTIVE = false;
@@ -131,7 +131,7 @@ void start() {
 		CUSTOM = vec4(0.0);
 		CUSTOM.w = params.lifetime;
 	}
-	
+
 	if (RESTART_POSITION) {
 		TRANSFORM[3].xyz = calculate_initial_position(params, alt_seed);
 		TRANSFORM = EMISSION_TRANSFORM * TRANSFORM;
@@ -147,15 +147,15 @@ void start() {
 
 void process() {
 	uint base_number = NUMBER;
-	
+
 	uint alt_seed = hash(base_number + uint(1) + RANDOM_SEED);
-	
+
 	DisplayParameters params;
 	calculate_initial_display_params(params, alt_seed);
-	
+
 	DynamicsParameters dynamic_params;
 	calculate_initial_dynamics_params(dynamic_params, alt_seed);
-	
+
 	float pi = 3.14159;
 	float degree_to_rad = pi / 180.0;
 
