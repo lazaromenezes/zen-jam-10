@@ -119,15 +119,16 @@ animations = [{
 size = Vector2(92, 187)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s57k7"]
-size = Vector2(150, 192)
+size = Vector2(218, 192)
 
-[node name="Kid" type="CharacterBody2D" node_paths=PackedStringArray("_anim_sprite", "_hold_position", "_visible_on_screen_notifier", "_raycast")]
+[node name="Kid" type="CharacterBody2D" node_paths=PackedStringArray("_anim_sprite", "_hold_position", "_visible_on_screen_notifier", "_raycast", "_area")]
 collision_layer = 2
 script = ExtResource("1_s57k7")
 _anim_sprite = NodePath("AnimatedSprite2D")
 _hold_position = NodePath("AnimatedSprite2D/HoldPosition")
 _visible_on_screen_notifier = NodePath("VisibleOnScreenNotifier2D")
 _raycast = NodePath("AnimatedSprite2D/RayCast2D")
+_area = NodePath("Area2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -129)
@@ -139,8 +140,9 @@ position = Vector2(41, -77)
 
 [node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D"]
 position = Vector2(0, 42)
-target_position = Vector2(150, 0)
+target_position = Vector2(100, 0)
 collision_mask = 2
+hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
 

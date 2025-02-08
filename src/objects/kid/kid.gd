@@ -21,13 +21,16 @@ enum State {
 @export var _bounce_speed: float = -1000
 @export var _visible_on_screen_notifier: VisibleOnScreenNotifier2D
 @export var _raycast: RayCast2D
+@export var _area: Area2D
 
 var _dir: int = -1
 var _state: State = State.INLINE
 var _balloon: Balloon
 var _is_next_inline: bool = false
+var _just_landed: bool = false
 
 func _ready() -> void:
+	_raycast.add_exception(_area)
 	_change_dir(-1)
 
 func _process(_delta: float) -> void:
@@ -42,6 +45,10 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	match _state:
 		State.INLINE:
+			if _is_waiting_spot():
+				return
+			else:
+				_enter_spot()
 			_check_near_kid()
 			_handle_move(delta)
 			_handle_gravity(delta)
@@ -62,6 +69,20 @@ func hold_balloon(balloon: Balloon) -> void:
 	_state = State.HOLDING
 	_is_next_inline = false
 
+func _enter_spot() -> void:
+	if _just_landed:
+		_just_landed = false
+		_change_dir(-1)
+
+func _is_waiting_spot() -> bool:
+	if _just_landed and _raycast.is_colliding():
+		var collider := _raycast.get_collider()
+		if collider:
+			var kid := collider.owner as Kid
+			if kid and kid.global_position.x < global_position.x:
+				return true
+	return false
+
 func _update_move_animation() -> void:
 	if absf(velocity.x) > 0:
 		_anim_sprite.play(WALK_ANIM)
@@ -78,7 +99,13 @@ func _check_near_kid() -> void:
 	if _is_next_inline:
 		return
 	if _raycast.is_colliding():
-		_change_dir(0)
+		var collider := _raycast.get_collider()
+		if collider:
+			var kid := collider.owner as Kid
+			if kid and kid.global_position.x < global_position.x:
+				_change_dir(0)
+			else:
+				_change_dir(-1)
 	else:
 		_change_dir(-1)
 
@@ -124,8 +151,8 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if _state == State.HOLDING:
 		if _balloon and _balloon.get_v_speed() > 0:
 			_release_balloon()
+			_just_landed = true
 			_state = State.INLINE
-			_change_dir(-1)
 	elif _state == State.BOUNCING:
 		_state = State.EXITING
 		_change_dir(1)
