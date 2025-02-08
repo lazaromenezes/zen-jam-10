@@ -1,0 +1,49 @@
+[gd_scene load_steps=34 format=3 uid="uid://d07im2xv627qx"]
+
+[ext_resource type="Script" uid="uid://bco8py6uhpjrc" path="res://src/objects/scene_manager/scene_manager.gd" id="1_84oxs"]
+[ext_resource type="Texture2D" uid="uid://curl15doyq212" path="res://assets/balloons/bear.png" id="2_attj4"]
+[ext_resource type="PackedScene" uid="uid://cpsduhll555xn" path="res://src/screens/title/title_screen.tscn" id="2_ox07s"]
+[ext_resource type="PackedScene" uid="uid://mt25okssb51x" path="res://src/screens/map.tscn" id="3_btjbo"]
+[ext_resource type="Texture2D" uid="uid://bdpq4xler35gd" path="res://assets/balloons/buffalo.png" id="3_ox07s"]
+[ext_resource type="Texture2D" uid="uid://c1ricl7yu3fbl" path="res://assets/balloons/chick.png" id="4_btjbo"]
+[ext_resource type="Texture2D" uid="uid://buexvsk6py2v3" path="res://assets/balloons/chicken.png" id="5_u6i5e"]
+[ext_resource type="Texture2D" uid="uid://bfh1nwb1j1des" path="res://assets/balloons/cow.png" id="6_st0hv"]
+[ext_resource type="Texture2D" uid="uid://dshi4pkjarxrr" path="res://assets/balloons/crocodile.png" id="7_1en50"]
+[ext_resource type="Texture2D" uid="uid://bu1uwd1r41q4m" path="res://assets/balloons/dog.png" id="8_tc7k7"]
+[ext_resource type="Texture2D" uid="uid://bipdibi50h8s2" path="res://assets/balloons/duck.png" id="9_bbm0l"]
+[ext_resource type="Texture2D" uid="uid://bqr4vlv2e1k8r" path="res://assets/balloons/elephant.png" id="10_m21ct"]
+[ext_resource type="Texture2D" uid="uid://kuqhtyi7meyt" path="res://assets/balloons/frog.png" id="11_xkr40"]
+[ext_resource type="Texture2D" uid="uid://ckt8ldkrjcgiy" path="res://assets/balloons/giraffe.png" id="12_ao52a"]
+[ext_resource type="Texture2D" uid="uid://qnhrn4fiiwuj" path="res://assets/balloons/goat.png" id="13_x34ei"]
+[ext_resource type="Texture2D" uid="uid://b33eyxiwtpxna" path="res://assets/balloons/gorilla.png" id="14_4xl2w"]
+[ext_resource type="Texture2D" uid="uid://dscvfwhvemrne" path="res://assets/balloons/hippo.png" id="15_j6uum"]
+[ext_resource type="Texture2D" uid="uid://cah42cr67ugdn" path="res://assets/balloons/horse.png" id="16_ob7d3"]
+[ext_resource type="Texture2D" uid="uid://bja7qrhjfhcx7" path="res://assets/balloons/monkey.png" id="17_fri4v"]
+[ext_resource type="Texture2D" uid="uid://dlhi6fj8uk847" path="res://assets/balloons/moose.png" id="18_vjwp1"]
+[ext_resource type="Texture2D" uid="uid://bq0e3pkfybc3f" path="res://assets/balloons/narwhal.png" id="19_ksr4i"]
+[ext_resource type="Texture2D" uid="uid://b3h36pheob222" path="res://assets/balloons/owl.png" id="20_xcjdi"]
+[ext_resource type="Texture2D" uid="uid://bsb2tqj6ldnri" path="res://assets/balloons/panda.png" id="21_gaase"]
+[ext_resource type="Texture2D" uid="uid://d31q3evj71d3l" path="res://assets/balloons/parrot.png" id="22_kqa0q"]
+[ext_resource type="Texture2D" uid="uid://krgqqtv2cpc6" path="res://assets/balloons/penguin.png" id="23_pdn8g"]
+[ext_resource type="Texture2D" uid="uid://d4itmfcvfop0k" path="res://assets/balloons/pig.png" id="24_3j0j1"]
+[ext_resource type="Texture2D" uid="uid://clk2iglncehx0" path="res://assets/balloons/rabbit.png" id="25_o7r5s"]
+[ext_resource type="Texture2D" uid="uid://51fcvfyinuwa" path="res://assets/balloons/rhino.png" id="26_gikfl"]
+[ext_resource type="Texture2D" uid="uid://c077k7qhlsc32" path="res://assets/balloons/sloth.png" id="27_u8t53"]
+[ext_resource type="Texture2D" uid="uid://68plmsk4vcyi" path="res://assets/balloons/snake.png" id="28_k43yj"]
+[ext_resource type="Texture2D" uid="uid://d1r7ioex0xcy5" path="res://assets/balloons/walrus.png" id="29_wg45i"]
+[ext_resource type="Texture2D" uid="uid://cvikq8abdxf4s" path="res://assets/balloons/whale.png" id="30_rmgaf"]
+[ext_resource type="Texture2D" uid="uid://dba7qeo2kxmks" path="res://assets/balloons/zebra.png" id="31_oomwr"]
+
+[node name="SceneManager" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_84oxs")
+_scenes = Dictionary[int, PackedScene]({
+0: ExtResource("2_ox07s"),
+1: ExtResource("3_btjbo")
+})
+_ballons = Array[Texture2D]([ExtResource("2_attj4"), ExtResource("3_ox07s"), ExtResource("4_btjbo"), ExtResource("5_u6i5e"), ExtResource("6_st0hv"), ExtResource("7_1en50"), ExtResource("8_tc7k7"), ExtResource("9_bbm0l"), ExtResource("10_m21ct"), ExtResource("11_xkr40"), ExtResource("12_ao52a"), ExtResource("13_x34ei"), ExtResource("14_4xl2w"), ExtResource("15_j6uum"), ExtResource("16_ob7d3"), ExtResource("17_fri4v"), ExtResource("18_vjwp1"), ExtResource("19_ksr4i"), ExtResource("20_xcjdi"), ExtResource("21_gaase"), ExtResource("22_kqa0q"), ExtResource("23_pdn8g"), ExtResource("24_3j0j1"), ExtResource("25_o7r5s"), ExtResource("26_gikfl"), ExtResource("27_u8t53"), ExtResource("28_k43yj"), ExtResource("29_wg45i"), ExtResource("30_rmgaf"), ExtResource("31_oomwr")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("7_1en50")

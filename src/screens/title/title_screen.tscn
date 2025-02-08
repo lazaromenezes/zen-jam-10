@@ -114,6 +114,7 @@ text = "1 Player"
 flat = true
 
 [node name="Multiplayer" type="Button" parent="MarginContainer/VBoxContainer/MenuContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"TitleScreenButton"
@@ -128,6 +129,7 @@ text = "Options"
 flat = true
 
 [node name="Leaderboard" type="Button" parent="MarginContainer/VBoxContainer/MenuContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"TitleScreenButton"
@@ -135,6 +137,7 @@ text = "Leaderboard"
 flat = true
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/MenuContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"TitleScreenButton"
@@ -178,3 +181,6 @@ texture = ExtResource("18_06afi")
 expand_mode = 1
 
 [connection signal="timeout" from="BaloonArea/Timer" to="BaloonArea" method="_on_timer_timeout"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuContainer/SinglePlayer" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuContainer/Exit" to="." method="_on_exit_pressed"]
