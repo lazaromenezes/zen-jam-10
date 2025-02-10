@@ -32,7 +32,7 @@ func _on_timeout() -> void:
 
 func _on_enter_line() -> void:
 	_line_count += 1
-	if _line_count >= _max_kids_inline:
+	if _line_count > _max_kids_inline:
 		_game_over()
 	updated_line.emit(_line_count)
 
