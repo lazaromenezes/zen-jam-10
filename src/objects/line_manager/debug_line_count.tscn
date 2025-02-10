@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bigfhu2eramuk"]
+
+[ext_resource type="Script" uid="uid://dow5ni60swfc" path="res://src/objects/line_manager/debug_line_count.gd" id="1_oftod"]
+
+[node name="DebugLineCount" type="Label"]
+offset_right = 40.0
+offset_bottom = 32.0
+text = "Line count: 999"
+script = ExtResource("1_oftod")

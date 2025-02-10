@@ -1,6 +1,9 @@
 class_name Kid
 extends CharacterBody2D
 
+signal bouncing
+signal enter_line
+
 const WALK_ANIM = &"walk"
 const IDLE_ANIM = &"idle"
 const HOLD_ANIM = &"hold"
@@ -28,6 +31,7 @@ var _state: State = State.INLINE
 var _balloon: Balloon
 var _is_next_inline: bool = false
 var _just_landed: bool = false
+var _inline: bool = false
 
 func _ready() -> void:
 	_raycast.add_exception(_area)
@@ -69,6 +73,9 @@ func hold_balloon(balloon: Balloon) -> void:
 	_state = State.HOLDING
 	_is_next_inline = false
 
+func get_state() -> State:
+	return _state
+
 func _enter_spot() -> void:
 	if _just_landed:
 		_just_landed = false
@@ -104,6 +111,9 @@ func _check_near_kid() -> void:
 			var kid := collider.owner as Kid
 			if kid and kid.global_position.x < global_position.x:
 				_change_dir(0)
+				if not _inline and kid.get_state() == State.INLINE:
+					_inline = true
+					enter_line.emit()
 			else:
 				_change_dir(-1)
 	else:
@@ -140,12 +150,16 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		stall.create_balloon.call_deferred()
 		stall.set_next_inline(self)
 		_is_next_inline = true
+		if not _inline:
+			_inline = true
+			enter_line.emit()
 	elif area.owner is Trampoline and _state == State.HOLDING:
 		_state = State.BOUNCING
 		_release_balloon()
 		velocity.y = _bounce_speed
 		var trampoline = area.owner as Trampoline
 		trampoline.push()
+		bouncing.emit()
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if _state == State.HOLDING:
