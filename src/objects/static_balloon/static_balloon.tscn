@@ -1,0 +1,42 @@
+[gd_scene load_steps=33 format=3 uid="uid://bink7bsw5fdex"]
+
+[ext_resource type="Script" uid="uid://bf6c6viftq4vo" path="res://src/objects/static_balloon/static_balloon.gd" id="1_b4ci4"]
+[ext_resource type="Texture2D" uid="uid://bdpq4xler35gd" path="res://assets/balloons/buffalo.png" id="1_kmxl1"]
+[ext_resource type="Texture2D" uid="uid://curl15doyq212" path="res://assets/balloons/bear.png" id="2_kmxl1"]
+[ext_resource type="PackedScene" uid="uid://crfrf17pc1hqo" path="res://src/objects/pop_particles/pop_particles.tscn" id="3_eyl5y"]
+[ext_resource type="Texture2D" uid="uid://c1ricl7yu3fbl" path="res://assets/balloons/chick.png" id="4_pc3ty"]
+[ext_resource type="Texture2D" uid="uid://buexvsk6py2v3" path="res://assets/balloons/chicken.png" id="5_eyl5y"]
+[ext_resource type="Texture2D" uid="uid://bfh1nwb1j1des" path="res://assets/balloons/cow.png" id="6_bvejk"]
+[ext_resource type="Texture2D" uid="uid://dshi4pkjarxrr" path="res://assets/balloons/crocodile.png" id="7_k60t2"]
+[ext_resource type="Texture2D" uid="uid://bu1uwd1r41q4m" path="res://assets/balloons/dog.png" id="8_xi5i2"]
+[ext_resource type="Texture2D" uid="uid://bipdibi50h8s2" path="res://assets/balloons/duck.png" id="9_u7p31"]
+[ext_resource type="Texture2D" uid="uid://bqr4vlv2e1k8r" path="res://assets/balloons/elephant.png" id="10_t8lta"]
+[ext_resource type="Texture2D" uid="uid://kuqhtyi7meyt" path="res://assets/balloons/frog.png" id="11_f38si"]
+[ext_resource type="Texture2D" uid="uid://ckt8ldkrjcgiy" path="res://assets/balloons/giraffe.png" id="12_kcoyq"]
+[ext_resource type="Texture2D" uid="uid://qnhrn4fiiwuj" path="res://assets/balloons/goat.png" id="13_avo5h"]
+[ext_resource type="Texture2D" uid="uid://b33eyxiwtpxna" path="res://assets/balloons/gorilla.png" id="14_gvj67"]
+[ext_resource type="Texture2D" uid="uid://dscvfwhvemrne" path="res://assets/balloons/hippo.png" id="15_nj7ay"]
+[ext_resource type="Texture2D" uid="uid://cah42cr67ugdn" path="res://assets/balloons/horse.png" id="16_plbf1"]
+[ext_resource type="Texture2D" uid="uid://bja7qrhjfhcx7" path="res://assets/balloons/monkey.png" id="17_fnwuw"]
+[ext_resource type="Texture2D" uid="uid://dlhi6fj8uk847" path="res://assets/balloons/moose.png" id="18_r42fb"]
+[ext_resource type="Texture2D" uid="uid://bq0e3pkfybc3f" path="res://assets/balloons/narwhal.png" id="19_520nv"]
+[ext_resource type="Texture2D" uid="uid://b3h36pheob222" path="res://assets/balloons/owl.png" id="20_olti4"]
+[ext_resource type="Texture2D" uid="uid://bsb2tqj6ldnri" path="res://assets/balloons/panda.png" id="21_tgq5r"]
+[ext_resource type="Texture2D" uid="uid://d31q3evj71d3l" path="res://assets/balloons/parrot.png" id="22_gxoet"]
+[ext_resource type="Texture2D" uid="uid://krgqqtv2cpc6" path="res://assets/balloons/penguin.png" id="23_562rp"]
+[ext_resource type="Texture2D" uid="uid://d4itmfcvfop0k" path="res://assets/balloons/pig.png" id="24_kdlpv"]
+[ext_resource type="Texture2D" uid="uid://clk2iglncehx0" path="res://assets/balloons/rabbit.png" id="25_evliv"]
+[ext_resource type="Texture2D" uid="uid://51fcvfyinuwa" path="res://assets/balloons/rhino.png" id="26_ef1yw"]
+[ext_resource type="Texture2D" uid="uid://c077k7qhlsc32" path="res://assets/balloons/sloth.png" id="27_wsqw5"]
+[ext_resource type="Texture2D" uid="uid://68plmsk4vcyi" path="res://assets/balloons/snake.png" id="28_vmpnw"]
+[ext_resource type="Texture2D" uid="uid://d1r7ioex0xcy5" path="res://assets/balloons/walrus.png" id="29_x28h1"]
+[ext_resource type="Texture2D" uid="uid://cvikq8abdxf4s" path="res://assets/balloons/whale.png" id="30_33yap"]
+[ext_resource type="Texture2D" uid="uid://dba7qeo2kxmks" path="res://assets/balloons/zebra.png" id="31_iep3q"]
+
+[node name="StaticBalloon" type="TextureRect"]
+offset_right = 183.0
+offset_bottom = 152.0
+texture = ExtResource("1_kmxl1")
+script = ExtResource("1_b4ci4")
+_particles_scene = ExtResource("3_eyl5y")
+_ballons = Array[Texture2D]([ExtResource("2_kmxl1"), ExtResource("1_kmxl1"), ExtResource("4_pc3ty"), ExtResource("5_eyl5y"), ExtResource("6_bvejk"), ExtResource("7_k60t2"), ExtResource("8_xi5i2"), ExtResource("9_u7p31"), ExtResource("10_t8lta"), ExtResource("11_f38si"), ExtResource("12_kcoyq"), ExtResource("13_avo5h"), ExtResource("14_gvj67"), ExtResource("15_nj7ay"), ExtResource("16_plbf1"), ExtResource("17_fnwuw"), ExtResource("18_r42fb"), ExtResource("19_520nv"), ExtResource("20_olti4"), ExtResource("21_tgq5r"), ExtResource("22_gxoet"), ExtResource("23_562rp"), ExtResource("24_kdlpv"), ExtResource("25_evliv"), ExtResource("26_ef1yw"), ExtResource("27_wsqw5"), ExtResource("28_vmpnw"), ExtResource("29_x28h1"), ExtResource("30_33yap"), ExtResource("31_iep3q")])

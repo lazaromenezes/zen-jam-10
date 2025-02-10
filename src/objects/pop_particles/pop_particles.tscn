@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://crfrf17pc1hqo"]
 
 [ext_resource type="Texture2D" uid="uid://c5iqjfvjreps1" path="res://assets/white_pixel.png" id="1_q6yjv"]
-[ext_resource type="Material" uid="uid://cx5wyjg3yb6lk" path="res://src/objects/balloon/balloon_shader_material.tres" id="2_do8kb"]
-[ext_resource type="Script" uid="uid://t0dj6tjpc1s7" path="res://src/objects/balloon/pop_particles.gd" id="3_do8kb"]
+[ext_resource type="Material" uid="uid://cx5wyjg3yb6lk" path="res://src/objects/pop_particles/balloon_shader_material.tres" id="2_do8kb"]
+[ext_resource type="Script" uid="uid://t0dj6tjpc1s7" path="res://src/objects/pop_particles/pop_particles.gd" id="3_do8kb"]
 
 [node name="PopParticles" type="GPUParticles2D"]
 emitting = false

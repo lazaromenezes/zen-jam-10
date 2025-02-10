@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cx5wyjg3yb6lk"]
 
-[ext_resource type="Shader" uid="uid://b8wq6e5kroh4v" path="res://src/objects/balloon/baloon_explosion.gdshader" id="1_2q7m6"]
+[ext_resource type="Shader" uid="uid://b8wq6e5kroh4v" path="res://src/objects/pop_particles/baloon_explosion.gdshader" id="1_2q7m6"]
 [ext_resource type="Texture2D" uid="uid://curl15doyq212" path="res://assets/balloons/bear.png" id="2_dnws3"]
 
 [sub_resource type="Curve" id="Curve_f233r"]
