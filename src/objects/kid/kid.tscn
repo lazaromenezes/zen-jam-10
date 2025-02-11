@@ -1,119 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://b8p4wq5cfri8e"]
+[gd_scene load_steps=10 format=3 uid="uid://b8p4wq5cfri8e"]
 
 [ext_resource type="Script" uid="uid://bfy0gq1n1gghk" path="res://src/objects/kid/kid.gd" id="1_s57k7"]
-[ext_resource type="Texture2D" uid="uid://cqnehq8w8rkcj" path="res://assets/kids/character_malePerson_sheetHD.png" id="2_kkqdq"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2rkga"]
-atlas = ExtResource("2_kkqdq")
-region = Rect2(768, 0, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rl01g"]
-atlas = ExtResource("2_kkqdq")
-region = Rect2(1536, 768, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qrgm1"]
-atlas = ExtResource("2_kkqdq")
-region = Rect2(0, 0, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fjjwa"]
-atlas = ExtResource("2_kkqdq")
-region = Rect2(1536, 0, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqe0i"]
-atlas = ExtResource("2_kkqdq")
-region = Rect2(0, 1024, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hj7gk"]
-atlas = ExtResource("2_kkqdq")
-region = Rect2(192, 1024, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ojk1q"]
-atlas = ExtResource("2_kkqdq")
-region = Rect2(384, 1024, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m6dou"]
-atlas = ExtResource("2_kkqdq")
-region = Rect2(576, 1024, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v7juo"]
-atlas = ExtResource("2_kkqdq")
-region = Rect2(768, 1024, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2p0m2"]
-atlas = ExtResource("2_kkqdq")
-region = Rect2(960, 1024, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_83wtd"]
-atlas = ExtResource("2_kkqdq")
-region = Rect2(1152, 1024, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yj6ul"]
-atlas = ExtResource("2_kkqdq")
-region = Rect2(1344, 1024, 192, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_q2lfo"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2rkga")
-}],
-"loop": true,
-"name": &"fall",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rl01g")
-}],
-"loop": true,
-"name": &"hold",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qrgm1")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fjjwa")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mqe0i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hj7gk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ojk1q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m6dou")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v7juo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2p0m2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_83wtd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yj6ul")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://rglbc6yp7flh" path="res://src/objects/kid/animations/female_adventurer.tres" id="2_kkqdq"]
+[ext_resource type="SpriteFrames" uid="uid://di0xwvt6jaqvb" path="res://src/objects/kid/animations/female_person.tres" id="3_fjjwa"]
+[ext_resource type="SpriteFrames" uid="uid://4m3rndpon4g5" path="res://src/objects/kid/animations/male_adventurer.tres" id="4_mqe0i"]
+[ext_resource type="SpriteFrames" uid="uid://duf4tlpi7nge0" path="res://src/objects/kid/animations/robot.tres" id="6_hj7gk"]
+[ext_resource type="SpriteFrames" uid="uid://dgc8l2ylov7tp" path="res://src/objects/kid/animations/zombie.tres" id="7_ojk1q"]
+[ext_resource type="SpriteFrames" uid="uid://ch676uhx6sdc4" path="res://src/objects/kid/animations/male_person.tres" id="8_mqe0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dx64e"]
 size = Vector2(92, 187)
@@ -124,6 +17,7 @@ size = Vector2(218, 192)
 [node name="Kid" type="CharacterBody2D" node_paths=PackedStringArray("_anim_sprite", "_hold_position", "_visible_on_screen_notifier", "_raycast", "_area")]
 collision_layer = 2
 script = ExtResource("1_s57k7")
+_available_animations = Array[SpriteFrames]([ExtResource("2_kkqdq"), ExtResource("3_fjjwa"), ExtResource("4_mqe0i"), ExtResource("8_mqe0i"), ExtResource("6_hj7gk"), ExtResource("7_ojk1q")])
 _anim_sprite = NodePath("AnimatedSprite2D")
 _hold_position = NodePath("AnimatedSprite2D/HoldPosition")
 _visible_on_screen_notifier = NodePath("VisibleOnScreenNotifier2D")
@@ -132,7 +26,7 @@ _area = NodePath("Area2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -129)
-sprite_frames = SubResource("SpriteFrames_q2lfo")
+sprite_frames = ExtResource("8_mqe0i")
 animation = &"fall"
 
 [node name="HoldPosition" type="Marker2D" parent="AnimatedSprite2D"]
@@ -160,5 +54,7 @@ debug_color = Color(0.0861068, 0.486235, 0.0272189, 0.42)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

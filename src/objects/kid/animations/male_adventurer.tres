@@ -1,0 +1,87 @@
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://4m3rndpon4g5"]
+
+[ext_resource type="Texture2D" uid="uid://btem5m5s8iwic" path="res://assets/kids/male_adventurer/character_maleAdventurer_cheer1.png" id="1_r0l57"]
+[ext_resource type="Texture2D" uid="uid://b8s20m8bwfcpw" path="res://assets/kids/male_adventurer/character_maleAdventurer_rope.png" id="2_hccqf"]
+[ext_resource type="Texture2D" uid="uid://csuno4cekb3o4" path="res://assets/kids/male_adventurer/character_maleAdventurer_idle.png" id="3_kj2lf"]
+[ext_resource type="Texture2D" uid="uid://cy6qpfoic17fj" path="res://assets/kids/male_adventurer/character_maleAdventurer_hit.png" id="4_jqpnm"]
+[ext_resource type="Texture2D" uid="uid://2tw6uy1hxv4n" path="res://assets/kids/male_adventurer/character_maleAdventurer_behindBack.png" id="5_hccqf"]
+[ext_resource type="Texture2D" uid="uid://3luubc85pxq0" path="res://assets/kids/male_adventurer/character_maleAdventurer_walk0.png" id="5_iog3v"]
+[ext_resource type="Texture2D" uid="uid://draibts1ahd30" path="res://assets/kids/male_adventurer/character_maleAdventurer_walk1.png" id="6_ctdpr"]
+[ext_resource type="Texture2D" uid="uid://cccjniu5df84v" path="res://assets/kids/male_adventurer/character_maleAdventurer_walk2.png" id="7_xeawe"]
+[ext_resource type="Texture2D" uid="uid://pg56jihgdeio" path="res://assets/kids/male_adventurer/character_maleAdventurer_walk3.png" id="8_8yrno"]
+[ext_resource type="Texture2D" uid="uid://rqnwf0kyay5r" path="res://assets/kids/male_adventurer/character_maleAdventurer_walk4.png" id="9_5w43r"]
+[ext_resource type="Texture2D" uid="uid://4iuuj0jld4g" path="res://assets/kids/male_adventurer/character_maleAdventurer_walk5.png" id="10_k2l6f"]
+[ext_resource type="Texture2D" uid="uid://cifo4e1ttakhn" path="res://assets/kids/male_adventurer/character_maleAdventurer_walk6.png" id="11_65lw1"]
+[ext_resource type="Texture2D" uid="uid://did6euv4dw6fc" path="res://assets/kids/male_adventurer/character_maleAdventurer_walk7.png" id="12_g823x"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jqpnm")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hccqf")
+}],
+"loop": true,
+"name": &"hold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kj2lf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r0l57")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hccqf")
+}],
+"loop": false,
+"name": &"scared",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_iog3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ctdpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xeawe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8yrno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5w43r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_k2l6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_65lw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_g823x")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
