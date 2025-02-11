@@ -17,6 +17,8 @@ enum State {
 	EXITING
 }
 
+@export var _available_animations: Array[SpriteFrames]
+
 @export var _anim_sprite: AnimatedSprite2D
 @export var _speed: float = 5000
 @export var _gravity: float = 900
@@ -34,6 +36,7 @@ var _just_landed: bool = false
 var _inline: bool = false
 
 func _ready() -> void:
+	_anim_sprite.sprite_frames = _available_animations.pick_random()
 	_raycast.add_exception(_area)
 	_change_dir(-1)
 
