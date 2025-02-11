@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://dgc8l2ylov7tp"]
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://dgc8l2ylov7tp"]
 
 [ext_resource type="Texture2D" uid="uid://gpco67r623km" path="res://assets/kids/zombie/character_zombie_hit.png" id="1_k4rxk"]
 [ext_resource type="Texture2D" uid="uid://b3loo3a5ru2w0" path="res://assets/kids/zombie/character_zombie_walk0.png" id="1_nwpg3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dosu2kt2sds3h" path="res://assets/kids/zombie/character_zombie_walk2.png" id="3_gsb2d"]
 [ext_resource type="Texture2D" uid="uid://c0kitq62qdagf" path="res://assets/kids/zombie/character_zombie_walk3.png" id="4_61p27"]
 [ext_resource type="Texture2D" uid="uid://b0885vxg4ugkm" path="res://assets/kids/zombie/character_zombie_cheer1.png" id="4_gcl6y"]
+[ext_resource type="Texture2D" uid="uid://cx6ak2q0top2w" path="res://assets/kids/zombie/character_zombie_behindBack.png" id="5_1dqgu"]
 [ext_resource type="Texture2D" uid="uid://5qteu7vduh7j" path="res://assets/kids/zombie/character_zombie_walk4.png" id="5_k4rxk"]
 [ext_resource type="Texture2D" uid="uid://do8eqxr72xinr" path="res://assets/kids/zombie/character_zombie_walk5.png" id="6_1dqgu"]
 [ext_resource type="Texture2D" uid="uid://bvgku300vqlsa" path="res://assets/kids/zombie/character_zombie_walk6.png" id="7_b4squ"]
@@ -45,6 +46,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1dqgu")
+}],
+"loop": false,
+"name": &"scared",
 "speed": 5.0
 }, {
 "frames": [{

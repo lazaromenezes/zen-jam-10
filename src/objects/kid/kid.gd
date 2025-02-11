@@ -9,12 +9,14 @@ const IDLE_ANIM = &"idle"
 const HOLD_ANIM = &"hold"
 const JUMP_ANIM = &"jump"
 const FALL_ANIM = &"fall"
+const SCARED_ANIM = &"scared"
 
 enum State {
 	INLINE,
 	HOLDING,
 	BOUNCING,
-	EXITING
+	EXITING,
+	SCARED
 }
 
 @export var _available_animations: Array[SpriteFrames]
@@ -48,6 +50,8 @@ func _process(_delta: float) -> void:
 			_update_jump_animation()
 		State.EXITING:
 			_update_move_animation()
+		State.SCARED:
+			_anim_sprite.play(SCARED_ANIM)
 
 func _physics_process(delta: float) -> void:
 	match _state:
@@ -151,6 +155,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		_change_dir(0)
 		var stall := area.owner as Stall
 		stall.create_balloon.call_deferred()
+		stall.balloon_popped.connect(_on_balloon_popped)
 		stall.set_next_inline(self)
 		_is_next_inline = true
 		if not _inline:
@@ -174,3 +179,16 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 		_state = State.EXITING
 		_change_dir(1)
 		_visible_on_screen_notifier.screen_exited.connect(queue_free)
+
+func _on_balloon_popped():
+	if _state == State.INLINE:
+		_state = State.SCARED
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if _anim_sprite.animation == SCARED_ANIM:
+		_state = State.INLINE
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.owner is Stall:
+		var stall := area.owner as Stall
+		stall.balloon_popped.disconnect(_on_balloon_popped)

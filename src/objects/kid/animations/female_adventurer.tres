@@ -1,9 +1,10 @@
-[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://rglbc6yp7flh"]
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://rglbc6yp7flh"]
 
 [ext_resource type="Texture2D" uid="uid://c3b8wwyffkiom" path="res://assets/kids/female_adventurer/character_femaleAdventurer_hit.png" id="1_f7krt"]
 [ext_resource type="Texture2D" uid="uid://cnahaus4qrspd" path="res://assets/kids/female_adventurer/character_femaleAdventurer_rope.png" id="2_37c3e"]
 [ext_resource type="Texture2D" uid="uid://clo5ax076lpp3" path="res://assets/kids/female_adventurer/character_femaleAdventurer_idle.png" id="3_lkyss"]
 [ext_resource type="Texture2D" uid="uid://18vftnvk65l2" path="res://assets/kids/female_adventurer/character_femaleAdventurer_cheer1.png" id="4_vjn02"]
+[ext_resource type="Texture2D" uid="uid://b4ic1jji7jypv" path="res://assets/kids/female_adventurer/character_femaleAdventurer_behindBack.png" id="5_37c3e"]
 [ext_resource type="Texture2D" uid="uid://gu5yy1a8gr65" path="res://assets/kids/female_adventurer/character_femaleAdventurer_walk0.png" id="5_hmokr"]
 [ext_resource type="Texture2D" uid="uid://b2am6m2tgjoh7" path="res://assets/kids/female_adventurer/character_femaleAdventurer_walk1.png" id="6_h0sh6"]
 [ext_resource type="Texture2D" uid="uid://drxaki4aauuhd" path="res://assets/kids/female_adventurer/character_femaleAdventurer_walk2.png" id="7_dk5mt"]
@@ -45,6 +46,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_37c3e")
+}],
+"loop": false,
+"name": &"scared",
 "speed": 5.0
 }, {
 "frames": [{
