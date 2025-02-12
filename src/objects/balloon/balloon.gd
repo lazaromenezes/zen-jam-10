@@ -3,6 +3,8 @@ extends Node2D
 
 signal pop
 signal released
+signal start_inflating
+signal stop_inflating
 
 @export_category("Balloon")
 @export var _ballons: Array[Texture2D]
@@ -61,6 +63,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not _released and Input.is_action_just_pressed("ui_accept"):
 		_inflating = true
+		start_inflating.emit()
 	if not _released and _inflating and Input.is_action_just_released("ui_accept"):
 		_stop_inflating()
 		_release_ballon()
@@ -93,6 +96,7 @@ func _inflate(delta: float) -> void:
 	_size += _inflating_speed * delta
 	if _size > _max_size:
 		_pop()
+		stop_inflating.emit()
 	else:
 		_play_wind_sound()
 		_update_scale()
@@ -142,6 +146,7 @@ func _update_color() -> void:
 
 func _stop_inflating() -> void:
 	_inflating = false
+	stop_inflating.emit()
 	%WindNoise.playing = false
 
 func _release_ballon() -> void:

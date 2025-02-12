@@ -1,14 +1,56 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctma3i7b8fmom"]
+[gd_scene load_steps=9 format=3 uid="uid://ctma3i7b8fmom"]
 
 [ext_resource type="Script" uid="uid://bgxhfcw8j7i3i" path="res://src/objects/stall/stall.gd" id="1_ubhw4"]
 [ext_resource type="PackedScene" uid="uid://dlaetdrmtdcu4" path="res://src/objects/balloon/balloon.tscn" id="2_iv7pk"]
+[ext_resource type="Texture2D" uid="uid://cqto02dcsbem1" path="res://assets/pump/pump_top.png" id="3_beyoj"]
+[ext_resource type="Texture2D" uid="uid://ds4f5pur21qfu" path="res://assets/pump/pump_body.png" id="4_4mx0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4x42"]
 size = Vector2(200, 206)
 
-[node name="Stall" type="Node2D"]
+[sub_resource type="Animation" id="Animation_beyoj"]
+resource_name = "pump"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PumpTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, -212), Vector2(-1, -166), Vector2(-1, -212)]
+}
+
+[sub_resource type="Animation" id="Animation_4mx0h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PumpTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -212)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lkivh"]
+_data = {
+&"RESET": SubResource("Animation_4mx0h"),
+&"pump": SubResource("Animation_beyoj")
+}
+
+[node name="Stall" type="Node2D" node_paths=PackedStringArray("_balloon_pos", "_anim_player")]
 script = ExtResource("1_ubhw4")
 _balloon_scene = ExtResource("2_iv7pk")
+_balloon_pos = NodePath("BalloonPos")
+_anim_player = NodePath("AnimationPlayer")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -104)
@@ -18,3 +60,19 @@ shape = SubResource("RectangleShape2D_m4x42")
 
 [node name="AudioListener" type="AudioListener2D" parent="."]
 current = true
+
+[node name="PumpTop" type="Sprite2D" parent="."]
+position = Vector2(-1, -212)
+texture = ExtResource("3_beyoj")
+
+[node name="PumpBody" type="Sprite2D" parent="."]
+position = Vector2(29, -134)
+texture = ExtResource("4_4mx0h")
+
+[node name="BalloonPos" type="Marker2D" parent="."]
+position = Vector2(86, -275)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lkivh")
+}
