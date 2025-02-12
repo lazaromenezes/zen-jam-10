@@ -180,7 +180,3 @@ func _spawn_particles() -> void:
 	particles.shader_texture = _sprite.texture
 	add_sibling(particles)
 	particles.global_position = global_position
-
-func _on_area_2d_area_entered(_area: Area2D) -> void:
-	_spawn_points(int(global_position.distance_to(_stall.global_position)))
-	queue_free()
