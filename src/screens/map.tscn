@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://mt25okssb51x"]
+[gd_scene load_steps=7 format=3 uid="uid://mt25okssb51x"]
 
 [ext_resource type="PackedScene" uid="uid://ctma3i7b8fmom" path="res://src/objects/stall/stall.tscn" id="1_rj4je"]
 [ext_resource type="PackedScene" uid="uid://ofv6rsepmowu" path="res://src/objects/trampoline/trampoline.tscn" id="3_bnd7t"]
 [ext_resource type="PackedScene" uid="uid://bigfhu2eramuk" path="res://src/objects/line_manager/debug_line_count.tscn" id="4_bnd7t"]
 [ext_resource type="PackedScene" uid="uid://bljutboc7t788" path="res://src/objects/line_manager/line_manager.tscn" id="4_vnbiq"]
+[ext_resource type="AudioStream" uid="uid://bjbmomxnjynk" path="res://assets/audio/music/overblown-fanfarre.ogg" id="5_bnd7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cj6eu"]
 size = Vector2(2743, 20)
@@ -28,5 +29,10 @@ scale = Vector2(2.52, 1)
 position = Vector2(2105, 889)
 
 [node name="DebugLineCount" parent="." instance=ExtResource("4_bnd7t")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bnd7t")
+autoplay = true
+bus = &"music_main"
 
 [connection signal="updated_line" from="LineManager" to="DebugLineCount" method="_on_line_count_updated"]

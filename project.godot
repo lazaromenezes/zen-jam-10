@@ -15,6 +15,10 @@ run/main_scene="uid://mt25okssb51x"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ca0u3o7lbrkpf"
+
 [autoload]
 
 SceneManager="*res://src/objects/scene_manager/scene_manager.tscn"
