@@ -152,5 +152,6 @@ position = Vector2(2105, 821)
 stream = ExtResource("5_bnd7t")
 autoplay = true
 bus = &"music_main"
+parameters/looping = true
 
 [connection signal="updated_line" from="LineManager" to="DebugLineCount" method="_on_line_count_updated"]

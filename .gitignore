@@ -4,3 +4,4 @@
 
 # Vimdiff .orig files
 *.orig
+dist/
