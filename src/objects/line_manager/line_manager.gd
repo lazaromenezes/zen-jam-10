@@ -2,7 +2,6 @@ class_name LineManager
 extends Node2D
 
 signal updated_line(count: int)
-signal delay_updated()
 
 @export var _kid_scene: PackedScene
 @export var _initial_delay: float = 8
@@ -11,6 +10,7 @@ signal delay_updated()
 @export var _max_kids_inline: int = 7
 @export_range(1, 100) var _time_increase_factor: int = 1
 @export var _increase_speed_delay: float = 45
+@export var _min_delay: float = 5
 
 var _current_delay: float
 var _line_count: int
@@ -39,7 +39,7 @@ func _game_over() -> void:
 func _on_timeout() -> void:
 	_spawn_kid()
 	if _reset_timer:
-		_kid_spawn_timer.start(_current_delay)
+		_kid_spawn_timer.start()
 		_reset_timer = false
 
 func _on_enter_line() -> void:
@@ -53,6 +53,5 @@ func _on_bouncing() -> void:
 	updated_line.emit(_line_count)
 	
 func _increase_speed() -> void:
-	_current_delay -= _current_delay * _time_increase_factor / 100
+	_current_delay -= max(_min_delay, _current_delay * _time_increase_factor / 100)
 	_reset_timer = true
-	delay_updated.emit()
