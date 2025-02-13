@@ -10,6 +10,7 @@ _kid_spawn_timer = NodePath("KidSpawnTimer")
 _speed_increase_timer = NodePath("SpeedIncreaseTimer")
 _time_increase_factor = 10
 _increase_speed_delay = 30.0
+_min_delay = 6.5
 
 [node name="KidSpawnTimer" type="Timer" parent="."]
 

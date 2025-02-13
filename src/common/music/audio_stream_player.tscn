@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://800wfkpanl56"]
+
+[ext_resource type="AudioStream" uid="uid://bjbmomxnjynk" path="res://assets/audio/music/overblown-fanfarre.ogg" id="1_2imp3"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_2imp3")
+autoplay = true
+bus = &"music_main"
+parameters/looping = true
