@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://mmqxg0bi13is"]
+
+[ext_resource type="PackedScene" uid="uid://be1xgfh0oiw3a" path="res://src/screens/world.tscn" id="1_6bjex"]
+[ext_resource type="PackedScene" uid="uid://ctma3i7b8fmom" path="res://src/objects/stall/stall.tscn" id="3_72gge"]
+[ext_resource type="PackedScene" uid="uid://ofv6rsepmowu" path="res://src/objects/trampoline/trampoline.tscn" id="4_wi58j"]
+[ext_resource type="PackedScene" uid="uid://800wfkpanl56" path="res://src/common/music/audio_stream_player.tscn" id="5_6bjex"]
+[ext_resource type="PackedScene" uid="uid://bljutboc7t788" path="res://src/objects/line_manager/line_manager.tscn" id="5_ly8hd"]
+[ext_resource type="PackedScene" uid="uid://xr5vjn6vkac5" path="res://src/ui/hud/hud.tscn" id="6_ukbjh"]
+
+[node name="MapSandbox" type="Node2D"]
+
+[node name="World" parent="." instance=ExtResource("1_6bjex")]
+
+[node name="Stall" parent="." instance=ExtResource("3_72gge")]
+position = Vector2(99, 976)
+
+[node name="Trampoline" parent="." instance=ExtResource("4_wi58j")]
+position = Vector2(1749, 973)
+scale = Vector2(2.52, 1)
+
+[node name="LineManager" parent="." instance=ExtResource("5_ly8hd")]
+position = Vector2(2105, 821)
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("5_6bjex")]
+
+[node name="HUD" parent="." node_paths=PackedStringArray("_line_manager") instance=ExtResource("6_ukbjh")]
+_line_manager = NodePath("../LineManager")
