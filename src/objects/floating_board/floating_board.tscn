@@ -1,0 +1,151 @@
+[gd_scene load_steps=33 format=3 uid="uid://dx7i8xluolop8"]
+
+[ext_resource type="Texture2D" uid="uid://kuqhtyi7meyt" path="res://assets/balloons/frog.png" id="1_elsw1"]
+[ext_resource type="Script" uid="uid://cdw181i57w36u" path="res://src/objects/floating_board/floating_board.gd" id="1_qkeec"]
+[ext_resource type="Texture2D" uid="uid://curl15doyq212" path="res://assets/balloons/bear.png" id="2_nps3e"]
+[ext_resource type="Texture2D" uid="uid://dscvfwhvemrne" path="res://assets/balloons/hippo.png" id="2_qkeec"]
+[ext_resource type="Texture2D" uid="uid://bdpq4xler35gd" path="res://assets/balloons/buffalo.png" id="3_iwumj"]
+[ext_resource type="Texture2D" uid="uid://c1ricl7yu3fbl" path="res://assets/balloons/chick.png" id="4_8hf23"]
+[ext_resource type="PackedScene" uid="uid://b85vtc22wnoy0" path="res://src/objects/selection_indicator/selection_indicator.tscn" id="4_udoxe"]
+[ext_resource type="Texture2D" uid="uid://buexvsk6py2v3" path="res://assets/balloons/chicken.png" id="5_6l1mj"]
+[ext_resource type="Texture2D" uid="uid://bfh1nwb1j1des" path="res://assets/balloons/cow.png" id="6_xu63a"]
+[ext_resource type="Texture2D" uid="uid://dshi4pkjarxrr" path="res://assets/balloons/crocodile.png" id="7_ypgtl"]
+[ext_resource type="Texture2D" uid="uid://bu1uwd1r41q4m" path="res://assets/balloons/dog.png" id="8_53wuj"]
+[ext_resource type="Texture2D" uid="uid://bipdibi50h8s2" path="res://assets/balloons/duck.png" id="9_3ap0v"]
+[ext_resource type="Texture2D" uid="uid://bqr4vlv2e1k8r" path="res://assets/balloons/elephant.png" id="10_nftsc"]
+[ext_resource type="Texture2D" uid="uid://ckt8ldkrjcgiy" path="res://assets/balloons/giraffe.png" id="12_om6rc"]
+[ext_resource type="Texture2D" uid="uid://qnhrn4fiiwuj" path="res://assets/balloons/goat.png" id="13_hv1qy"]
+[ext_resource type="Texture2D" uid="uid://b33eyxiwtpxna" path="res://assets/balloons/gorilla.png" id="14_f52v6"]
+[ext_resource type="Texture2D" uid="uid://cah42cr67ugdn" path="res://assets/balloons/horse.png" id="16_r3vq8"]
+[ext_resource type="Texture2D" uid="uid://bja7qrhjfhcx7" path="res://assets/balloons/monkey.png" id="17_xls0u"]
+[ext_resource type="Texture2D" uid="uid://dlhi6fj8uk847" path="res://assets/balloons/moose.png" id="18_hkhae"]
+[ext_resource type="Texture2D" uid="uid://bq0e3pkfybc3f" path="res://assets/balloons/narwhal.png" id="19_a6khq"]
+[ext_resource type="Texture2D" uid="uid://b3h36pheob222" path="res://assets/balloons/owl.png" id="20_yjd1n"]
+[ext_resource type="Texture2D" uid="uid://bsb2tqj6ldnri" path="res://assets/balloons/panda.png" id="21_d7gwv"]
+[ext_resource type="Texture2D" uid="uid://d31q3evj71d3l" path="res://assets/balloons/parrot.png" id="22_dqocx"]
+[ext_resource type="Texture2D" uid="uid://krgqqtv2cpc6" path="res://assets/balloons/penguin.png" id="23_xldrs"]
+[ext_resource type="Texture2D" uid="uid://d4itmfcvfop0k" path="res://assets/balloons/pig.png" id="24_5fx1u"]
+[ext_resource type="Texture2D" uid="uid://clk2iglncehx0" path="res://assets/balloons/rabbit.png" id="25_6qkib"]
+[ext_resource type="Texture2D" uid="uid://51fcvfyinuwa" path="res://assets/balloons/rhino.png" id="26_ydltf"]
+[ext_resource type="Texture2D" uid="uid://c077k7qhlsc32" path="res://assets/balloons/sloth.png" id="27_b18nx"]
+[ext_resource type="Texture2D" uid="uid://68plmsk4vcyi" path="res://assets/balloons/snake.png" id="28_h4xi7"]
+[ext_resource type="Texture2D" uid="uid://d1r7ioex0xcy5" path="res://assets/balloons/walrus.png" id="29_6i5nl"]
+[ext_resource type="Texture2D" uid="uid://cvikq8abdxf4s" path="res://assets/balloons/whale.png" id="30_yof1n"]
+[ext_resource type="Texture2D" uid="uid://dba7qeo2kxmks" path="res://assets/balloons/zebra.png" id="31_0dqaa"]
+
+[node name="FloatingBoard" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_qkeec")
+_icons = Array[Texture2D]([ExtResource("2_nps3e"), ExtResource("3_iwumj"), ExtResource("4_8hf23"), ExtResource("5_6l1mj"), ExtResource("6_xu63a"), ExtResource("7_ypgtl"), ExtResource("8_53wuj"), ExtResource("9_3ap0v"), ExtResource("10_nftsc"), ExtResource("1_elsw1"), ExtResource("12_om6rc"), ExtResource("13_hv1qy"), ExtResource("14_f52v6"), ExtResource("2_qkeec"), ExtResource("16_r3vq8"), ExtResource("17_xls0u"), ExtResource("18_hkhae"), ExtResource("19_a6khq"), ExtResource("20_yjd1n"), ExtResource("21_d7gwv"), ExtResource("22_dqocx"), ExtResource("23_xldrs"), ExtResource("24_5fx1u"), ExtResource("25_6qkib"), ExtResource("26_ydltf"), ExtResource("27_b18nx"), ExtResource("28_h4xi7"), ExtResource("29_6i5nl"), ExtResource("30_yof1n"), ExtResource("31_0dqaa")])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"EmptyPanelContainer"
+
+[node name="LeftBaloon" type="TextureRect" parent="VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("1_elsw1")
+
+[node name="RightBaloon" type="TextureRect" parent="VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("2_qkeec")
+
+[node name="BoardContent" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"EmptyPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BoardContent"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 10
+
+[node name="DisplayContent" type="PanelContainer" parent="VBoxContainer/BoardContent/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BannerPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/BoardContent/MarginContainer/DisplayContent"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/BoardContent/MarginContainer/DisplayContent/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"GameOverLabel"
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/BoardContent/MarginContainer/DisplayContent/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 20
+
+[node name="PlayAgain" type="Button" parent="VBoxContainer/BoardContent/MarginContainer/DisplayContent/VBoxContainer/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"TitleScreenButton"
+text = "Try Again"
+flat = true
+
+[node name="Title" type="Button" parent="VBoxContainer/BoardContent/MarginContainer/DisplayContent/VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"TitleScreenButton"
+text = "Back To Title"
+flat = true
+
+[node name="Exit" type="Button" parent="VBoxContainer/BoardContent/MarginContainer/DisplayContent/VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"TitleScreenButton"
+text = "Exit"
+flat = true
+
+[node name="SelectionIndicator" parent="." instance=ExtResource("4_udoxe")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 400.0
+offset_bottom = 70.0
+grow_horizontal = 1
+grow_vertical = 1

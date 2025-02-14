@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://vbpvcw6dscwt"]
+
+[ext_resource type="PackedScene" uid="uid://be1xgfh0oiw3a" path="res://src/screens/world.tscn" id="1_5265p"]
+[ext_resource type="Script" uid="uid://wwwt3wgd52d7" path="res://src/screens/game_over/game_over.gd" id="1_f8443"]
+[ext_resource type="PackedScene" uid="uid://dx7i8xluolop8" path="res://src/objects/floating_board/floating_board.tscn" id="2_he51y"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_f8443")
+
+[node name="World" parent="." instance=ExtResource("1_5265p")]
+
+[node name="UIOverlay" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UIOverlay"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Separator" type="ColorRect" parent="UIOverlay/Control"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.301961, 0.301961, 0.301961, 0.701961)
+
+[node name="FloatingBoard" parent="UIOverlay/Control/Separator" instance=ExtResource("2_he51y")]
+unique_name_in_owner = true
+layout_mode = 1

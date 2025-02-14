@@ -2,7 +2,8 @@ extends CanvasLayer
 
 enum Scene{
 	TITLE,
-	MAP
+	MAP,
+	GAME_OVER
 }
 
 @export var _scenes: Dictionary[Scene, PackedScene] = {}
@@ -16,14 +17,17 @@ func _ready() -> void:
 	
 	_spawn_position = Vector2(width, height) / 2
 
-func transition_to(new_scene: Scene) -> void:
-	var sprite := _spawn_sprite()
+func transition_to(new_scene: Scene, show_transition: bool = true) -> void:
+	if show_transition:
+		var sprite := _spawn_sprite()
 	
-	var tween = create_tween()
-	tween.tween_property(sprite, "scale", Vector2(20, 20), 0.5)
-	tween.tween_callback(func(): _switch_scene(new_scene)).set_delay(0.1)
-	tween.tween_property(sprite, "scale", Vector2.ONE, 0.5)
-	tween.tween_callback(func(): sprite.queue_free())
+		var tween = create_tween()
+		tween.tween_property(sprite, "scale", Vector2(20, 20), 0.5)
+		tween.tween_callback(func(): _switch_scene(new_scene)).set_delay(0.1)
+		tween.tween_property(sprite, "scale", Vector2.ONE, 0.5)
+		tween.tween_callback(func(): sprite.queue_free())
+	else:
+		_switch_scene(new_scene)
 
 func _spawn_sprite() -> Sprite2D:
 	var sprite = Sprite2D.new()

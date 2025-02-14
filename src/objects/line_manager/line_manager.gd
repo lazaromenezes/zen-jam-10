@@ -40,7 +40,7 @@ func _spawn_kid() -> void:
 	kid.bouncing.connect(_on_bouncing)
 
 func _game_over() -> void:
-	print("Game Over!!")
+	SceneManager.transition_to.call_deferred(SceneManager.Scene.GAME_OVER, false)
 
 func _on_timeout() -> void:
 	_spawn_kid()
