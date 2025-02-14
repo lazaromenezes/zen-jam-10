@@ -38,6 +38,7 @@ func _spawn_kid() -> void:
 	kid.global_position = global_position
 	kid.enter_line.connect(_on_enter_line)
 	kid.bouncing.connect(_on_bouncing)
+	kid.exit_line.connect(_on_exit_line)
 
 func _game_over() -> void:
 	print("Game Over!!")
@@ -54,9 +55,11 @@ func _on_enter_line() -> void:
 		_game_over()
 	updated_line.emit(_line_count)
 
-func _on_bouncing() -> void:
+func _on_exit_line() -> void:
 	_line_count -= 1
 	updated_line.emit(_line_count)
+
+func _on_bouncing() -> void:
 	_score += _bounce_score
 	scored.emit(_score)
 	

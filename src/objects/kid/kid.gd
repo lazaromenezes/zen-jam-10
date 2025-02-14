@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 signal bouncing
 signal enter_line
+signal exit_line
 
 const WALK_ANIM = &"walk"
 const IDLE_ANIM = &"idle"
@@ -81,6 +82,8 @@ func hold_balloon(balloon: Balloon) -> void:
 	reparent(balloon)
 	_state = State.HOLDING
 	_is_next_inline = false
+	_inline = false
+	exit_line.emit()
 
 func get_state() -> State:
 	return _state
