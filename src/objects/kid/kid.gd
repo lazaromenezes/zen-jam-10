@@ -10,6 +10,7 @@ const HOLD_ANIM = &"hold"
 const JUMP_ANIM = &"jump"
 const FALL_ANIM = &"fall"
 const SCARED_ANIM = &"scared"
+const HOLD_START_OFFSET = Vector2(0, -10)
 
 enum State {
 	INLINE,
@@ -75,6 +76,7 @@ func _physics_process(delta: float) -> void:
 func hold_balloon(balloon: Balloon) -> void:
 	_balloon = balloon
 	_anim_sprite.play(HOLD_ANIM)
+	global_position += HOLD_START_OFFSET
 	balloon.global_position = _hold_position.global_position
 	reparent(balloon)
 	_state = State.HOLDING
