@@ -157,7 +157,8 @@ func _release_ballon() -> void:
 	_v_speed = -_size * 5
 	_sprite.self_modulate = Color.WHITE
 	_sprite_pivot.rotation = 0
-	_spawn_points(int(_size_max_ratio * 100))
+	if Engine.is_embedded_in_editor():
+		_spawn_points(int(_size_max_ratio * 100))
 	released.emit()
 
 func _attach_kid() -> void:
