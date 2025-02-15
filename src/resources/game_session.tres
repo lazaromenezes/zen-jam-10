@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GameSession" load_steps=2 format=3 uid="uid://cdykhipp807g8"]
+
+[ext_resource type="Script" uid="uid://c0j7iby3smeo4" path="res://src/resources/game_session.gd" id="1_dstjk"]
+
+[resource]
+script = ExtResource("1_dstjk")
+_score = 0
+_time = 0.0
+metadata/_custom_type_script = ExtResource("1_dstjk")

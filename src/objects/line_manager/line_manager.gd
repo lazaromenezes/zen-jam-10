@@ -62,7 +62,7 @@ func _on_exit_line() -> void:
 func _on_bouncing() -> void:
 	_score += _bounce_score
 	scored.emit(_score)
-	
+
 func _increase_speed() -> void:
 	_current_delay -= max(_min_delay, _current_delay * _time_increase_factor / 100)
 	_reset_timer = true

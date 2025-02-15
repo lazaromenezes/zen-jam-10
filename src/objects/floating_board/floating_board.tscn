@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dx7i8xluolop8"]
+[gd_scene load_steps=34 format=3 uid="uid://dx7i8xluolop8"]
 
 [ext_resource type="Texture2D" uid="uid://kuqhtyi7meyt" path="res://assets/balloons/frog.png" id="1_elsw1"]
 [ext_resource type="Script" uid="uid://cdw181i57w36u" path="res://src/objects/floating_board/floating_board.gd" id="1_qkeec"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://d1r7ioex0xcy5" path="res://assets/balloons/walrus.png" id="29_6i5nl"]
 [ext_resource type="Texture2D" uid="uid://cvikq8abdxf4s" path="res://assets/balloons/whale.png" id="30_yof1n"]
 [ext_resource type="Texture2D" uid="uid://dba7qeo2kxmks" path="res://assets/balloons/zebra.png" id="31_0dqaa"]
+[ext_resource type="Resource" uid="uid://cdykhipp807g8" path="res://src/resources/game_session.tres" id="32_iwumj"]
 
 [node name="FloatingBoard" type="Control"]
 layout_mode = 3
@@ -50,6 +51,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_qkeec")
 _icons = Array[Texture2D]([ExtResource("2_nps3e"), ExtResource("3_iwumj"), ExtResource("4_8hf23"), ExtResource("5_6l1mj"), ExtResource("6_xu63a"), ExtResource("7_ypgtl"), ExtResource("8_53wuj"), ExtResource("9_3ap0v"), ExtResource("10_nftsc"), ExtResource("1_elsw1"), ExtResource("12_om6rc"), ExtResource("13_hv1qy"), ExtResource("14_f52v6"), ExtResource("2_qkeec"), ExtResource("16_r3vq8"), ExtResource("17_xls0u"), ExtResource("18_hkhae"), ExtResource("19_a6khq"), ExtResource("20_yjd1n"), ExtResource("21_d7gwv"), ExtResource("22_dqocx"), ExtResource("23_xldrs"), ExtResource("24_5fx1u"), ExtResource("25_6qkib"), ExtResource("26_ydltf"), ExtResource("27_b18nx"), ExtResource("28_h4xi7"), ExtResource("29_6i5nl"), ExtResource("30_yof1n"), ExtResource("31_0dqaa")])
+_session = ExtResource("32_iwumj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -106,6 +108,38 @@ theme_type_variation = &"GameOverLabel"
 text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/BoardContent/MarginContainer/DisplayContent/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/BoardContent/MarginContainer/DisplayContent/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"GameOverLabel"
+theme_override_font_sizes/font_size = 48
+text = "Points:"
+
+[node name="Score" type="Label" parent="VBoxContainer/BoardContent/MarginContainer/DisplayContent/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"GameOverLabel"
+theme_override_font_sizes/font_size = 48
+
+[node name="Label3" type="Label" parent="VBoxContainer/BoardContent/MarginContainer/DisplayContent/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"GameOverLabel"
+theme_override_font_sizes/font_size = 48
+text = "Time"
+
+[node name="Time" type="Label" parent="VBoxContainer/BoardContent/MarginContainer/DisplayContent/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"GameOverLabel"
+theme_override_font_sizes/font_size = 48
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer/BoardContent/MarginContainer/DisplayContent/VBoxContainer"]
 unique_name_in_owner = true

@@ -34,6 +34,3 @@ func _on_balloon_start_inflating() -> void:
 
 func _on_balloon_stop_inflating() -> void:
 	_anim_player.stop()
-
-func _on_line_manager_delay_updated() -> void:
-	pass # Replace with function body.

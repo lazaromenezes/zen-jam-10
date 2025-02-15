@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://mt25okssb51x"]
+[gd_scene load_steps=9 format=3 uid="uid://mt25okssb51x"]
 
 [ext_resource type="PackedScene" uid="uid://be1xgfh0oiw3a" path="res://src/screens/world.tscn" id="1_5y8ka"]
+[ext_resource type="Script" uid="uid://dsp581td2r3sc" path="res://src/screens/map.gd" id="1_pxn6c"]
 [ext_resource type="PackedScene" uid="uid://ctma3i7b8fmom" path="res://src/objects/stall/stall.tscn" id="1_rj4je"]
+[ext_resource type="Resource" uid="uid://cdykhipp807g8" path="res://src/resources/game_session.tres" id="2_xt35m"]
 [ext_resource type="PackedScene" uid="uid://ofv6rsepmowu" path="res://src/objects/trampoline/trampoline.tscn" id="3_bnd7t"]
 [ext_resource type="PackedScene" uid="uid://bljutboc7t788" path="res://src/objects/line_manager/line_manager.tscn" id="4_vnbiq"]
 [ext_resource type="PackedScene" uid="uid://xr5vjn6vkac5" path="res://src/ui/hud/hud.tscn" id="5_pxn6c"]
 [ext_resource type="PackedScene" uid="uid://800wfkpanl56" path="res://src/common/music/audio_stream_player.tscn" id="6_xt35m"]
 
 [node name="Map" type="Node2D"]
+script = ExtResource("1_pxn6c")
+game_session = ExtResource("2_xt35m")
 
 [node name="World" parent="." instance=ExtResource("1_5y8ka")]
 
@@ -21,8 +25,12 @@ scale = Vector2(2.52, 1)
 [node name="LineManager" parent="." instance=ExtResource("4_vnbiq")]
 position = Vector2(2105, 821)
 
-[node name="HUD" parent="." instance=ExtResource("5_pxn6c")]
+[node name="HUD" parent="." node_paths=PackedStringArray("_line_manager") instance=ExtResource("5_pxn6c")]
 offset_right = 350.0
 offset_bottom = 174.0
+_line_manager = NodePath("../LineManager")
+_session = ExtResource("2_xt35m")
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("6_xt35m")]
+
+[connection signal="scored" from="LineManager" to="." method="_on_line_manager_scored"]
