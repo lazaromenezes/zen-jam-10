@@ -41,7 +41,7 @@ func _spawn_kid() -> void:
 	kid.exit_line.connect(_on_exit_line)
 
 func _game_over() -> void:
-	print("Game Over!!")
+	SceneManager.transition_to.call_deferred(SceneManager.Scene.GAME_OVER, false)
 
 func _on_timeout() -> void:
 	_spawn_kid()
@@ -62,7 +62,7 @@ func _on_exit_line() -> void:
 func _on_bouncing() -> void:
 	_score += _bounce_score
 	scored.emit(_score)
-	
+
 func _increase_speed() -> void:
 	_current_delay -= max(_min_delay, _current_delay * _time_increase_factor / 100)
 	_reset_timer = true

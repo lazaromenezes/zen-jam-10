@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://d07im2xv627qx"]
+[gd_scene load_steps=35 format=3 uid="uid://d07im2xv627qx"]
 
 [ext_resource type="Script" uid="uid://bco8py6uhpjrc" path="res://src/objects/scene_manager/scene_manager.gd" id="1_84oxs"]
 [ext_resource type="Texture2D" uid="uid://curl15doyq212" path="res://assets/balloons/bear.png" id="2_attj4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://mt25okssb51x" path="res://src/screens/map.tscn" id="3_btjbo"]
 [ext_resource type="Texture2D" uid="uid://bdpq4xler35gd" path="res://assets/balloons/buffalo.png" id="3_ox07s"]
 [ext_resource type="Texture2D" uid="uid://c1ricl7yu3fbl" path="res://assets/balloons/chick.png" id="4_btjbo"]
+[ext_resource type="PackedScene" uid="uid://vbpvcw6dscwt" path="res://src/screens/game_over/game_over.tscn" id="4_u6i5e"]
 [ext_resource type="Texture2D" uid="uid://buexvsk6py2v3" path="res://assets/balloons/chicken.png" id="5_u6i5e"]
 [ext_resource type="Texture2D" uid="uid://bfh1nwb1j1des" path="res://assets/balloons/cow.png" id="6_st0hv"]
 [ext_resource type="Texture2D" uid="uid://dshi4pkjarxrr" path="res://assets/balloons/crocodile.png" id="7_1en50"]
@@ -39,7 +40,8 @@ layer = 2
 script = ExtResource("1_84oxs")
 _scenes = Dictionary[int, PackedScene]({
 0: ExtResource("2_ox07s"),
-1: ExtResource("3_btjbo")
+1: ExtResource("3_btjbo"),
+2: ExtResource("4_u6i5e")
 })
 _ballons = Array[Texture2D]([ExtResource("2_attj4"), ExtResource("3_ox07s"), ExtResource("4_btjbo"), ExtResource("5_u6i5e"), ExtResource("6_st0hv"), ExtResource("7_1en50"), ExtResource("8_tc7k7"), ExtResource("9_bbm0l"), ExtResource("10_m21ct"), ExtResource("11_xkr40"), ExtResource("12_ao52a"), ExtResource("13_x34ei"), ExtResource("14_4xl2w"), ExtResource("15_j6uum"), ExtResource("16_ob7d3"), ExtResource("17_fri4v"), ExtResource("18_vjwp1"), ExtResource("19_ksr4i"), ExtResource("20_xcjdi"), ExtResource("21_gaase"), ExtResource("22_kqa0q"), ExtResource("23_pdn8g"), ExtResource("24_3j0j1"), ExtResource("25_o7r5s"), ExtResource("26_gikfl"), ExtResource("27_u8t53"), ExtResource("28_k43yj"), ExtResource("29_wg45i"), ExtResource("30_rmgaf"), ExtResource("31_oomwr")])
 

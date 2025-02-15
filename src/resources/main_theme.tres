@@ -1,6 +1,16 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dwl0yx517em6a"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dwl0yx517em6a"]
 
 [ext_resource type="FontFile" uid="uid://bwktew5xftf22" path="res://assets/fonts/Flippingamefont-vnAPM.ttf" id="1_apfjo"]
+[ext_resource type="Texture2D" uid="uid://d01e6d3hsxi1q" path="res://assets/banner/banner_hanging.png" id="1_xk00v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_apfjo"]
+texture = ExtResource("1_xk00v")
+texture_margin_left = 40.0
+texture_margin_top = 50.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhcpv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xk00v"]
 
@@ -9,6 +19,14 @@
 [resource]
 default_font = ExtResource("1_apfjo")
 default_font_size = 32
+BannerPanelContainer/base_type = &"PanelContainer"
+BannerPanelContainer/styles/panel = SubResource("StyleBoxTexture_apfjo")
+EmptyPanelContainer/base_type = &"PanelContainer"
+EmptyPanelContainer/styles/panel = SubResource("StyleBoxEmpty_bhcpv")
+GameOverLabel/base_type = &"Label"
+GameOverLabel/colors/font_color = Color(1, 0.945098, 0.823529, 1)
+GameOverLabel/constants/outline_size = 5
+GameOverLabel/font_sizes/font_size = 120
 MainMenuSelection/base_type = &"PanelContainer"
 MainMenuSelection/styles/panel = SubResource("StyleBoxEmpty_xk00v")
 TitleScreenButton/base_type = &"Button"
