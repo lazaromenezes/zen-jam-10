@@ -6,12 +6,13 @@
 font_size = 42
 font_color = Color(0.34902, 0.482353, 0.243137, 1)
 
-[node name="HUD" type="MarginContainer" node_paths=PackedStringArray("_in_line_label", "_score_label", "_timer_label")]
+[node name="HUD" type="MarginContainer" node_paths=PackedStringArray("_in_line_label", "_score_label", "_record_label", "_timer_label")]
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 40
 script = ExtResource("1_jobw0")
 _in_line_label = NodePath("VBoxContainer/InLIne")
 _score_label = NodePath("VBoxContainer/Score")
+_record_label = NodePath("VBoxContainer/Record")
 _timer_label = NodePath("VBoxContainer/Timer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -22,12 +23,17 @@ layout_mode = 2
 text = "Kids in line: 0/0"
 label_settings = SubResource("LabelSettings_6bjex")
 
+[node name="Timer" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Time: 0.0"
+label_settings = SubResource("LabelSettings_6bjex")
+
 [node name="Score" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_6bjex")
 
-[node name="Timer" type="Label" parent="VBoxContainer"]
+[node name="Record" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Time: 0.0"
+text = "Best: 0"
 label_settings = SubResource("LabelSettings_6bjex")
