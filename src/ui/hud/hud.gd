@@ -3,6 +3,7 @@ extends MarginContainer
 
 @export var _in_line_label: Label
 @export var _score_label: Label
+@export var _record_label: Label
 @export var _timer_label: Label
 @export var _line_manager: LineManager
 
@@ -14,6 +15,7 @@ func _ready() -> void:
 	_line_manager.updated_line.connect(_on_update_in_line_count)
 	_line_manager.scored.connect(_on_update_score)
 	_on_update_in_line_count(0)
+	_record_label.text = "Best: " + str(_line_manager.get_record())
 
 func _process(_delta: float) -> void:
 	var time := (Time.get_ticks_msec() - _start_time)/1000.0
