@@ -61,10 +61,10 @@ func _ready() -> void:
 	_inflating_speed = randf_range(_inflating_speed - _inflating_speed_offset, _inflating_speed + _inflating_speed_offset)
 
 func _process(delta: float) -> void:
-	if not _released and Input.is_action_just_pressed("ui_accept"):
+	if not _released and Input.is_action_just_pressed("inflate_balloon"):
 		_inflating = true
 		start_inflating.emit()
-	if not _released and _inflating and Input.is_action_just_released("ui_accept"):
+	if not _released and _inflating and Input.is_action_just_released("inflate_balloon"):
 		_stop_inflating()
 		_release_ballon()
 	
